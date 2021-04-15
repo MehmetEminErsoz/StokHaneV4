@@ -1,0 +1,847 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB0345Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TabAlsatkul">
+          <Key>
+            <PropertyRef Name="idalsatkul" />
+          </Key>
+          <Property Name="idalsatkul" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="alsatkultur" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TabHane">
+          <Key>
+            <PropertyRef Name="idTavukhane" />
+          </Key>
+          <Property Name="idTavukhane" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idisletme" Type="int" Nullable="false" />
+          <Property Name="TavukhaneAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tabirsaliye">
+          <Key>
+            <PropertyRef Name="idirsaliye" />
+          </Key>
+          <Property Name="idirsaliye" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="irsaliyeKod" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="girdiTarih" Type="date" Nullable="false" />
+          <Property Name="firma" Type="nvarchar" MaxLength="50" />
+          <Property Name="firma2" Type="nvarchar" MaxLength="50" />
+          <Property Name="fiyat" Type="money" />
+        </EntityType>
+        <EntityType Name="Tabisletme">
+          <Key>
+            <PropertyRef Name="idisletme" />
+          </Key>
+          <Property Name="idisletme" Type="int" Nullable="false" />
+          <Property Name="isletmeKod" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="isletmeAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TabKullanici">
+          <Key>
+            <PropertyRef Name="idKullanici" />
+          </Key>
+          <Property Name="idKullanici" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KulAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kulisim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kulsoyisim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idyetki" Type="int" Nullable="false" />
+          <Property Name="sonerisim" Type="datetime" Nullable="false" />
+          <Property Name="kulsif" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TabLogRasyon">
+          <Key>
+            <PropertyRef Name="idislem" />
+          </Key>
+          <Property Name="idislem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRasyon" Type="int" Nullable="false" />
+          <Property Name="idRasyonTarif" Type="int" Nullable="false" />
+          <Property Name="İdHane" Type="int" Nullable="false" />
+          <Property Name="idKullanici" Type="int" Nullable="false" />
+          <Property Name="islemTarihi" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TabmiktarCins">
+          <Key>
+            <PropertyRef Name="idmiktarcins" />
+          </Key>
+          <Property Name="idmiktarcins" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="miktarturu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TabRasyon">
+          <Key>
+            <PropertyRef Name="idRasyon" />
+          </Key>
+          <Property Name="idRasyon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RasyonAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tabrasyontarifi">
+          <Key>
+            <PropertyRef Name="idRasyonTarif" />
+          </Key>
+          <Property Name="idRasyonTarif" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRasyon" Type="int" Nullable="false" />
+          <Property Name="TarifMiktar" Type="float" Nullable="false" />
+          <Property Name="idUrun" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Taburun">
+          <Key>
+            <PropertyRef Name="idurun" />
+          </Key>
+          <Property Name="idurun" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="stokKod" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TabUrunGenel">
+          <Key>
+            <PropertyRef Name="idurungenel" />
+          </Key>
+          <Property Name="idurungenel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUrun" Type="int" Nullable="false" />
+          <Property Name="idirsaliye" Type="int" Nullable="false" />
+          <Property Name="miktar" Type="float" Nullable="false" />
+          <Property Name="idmiktarcins" Type="int" Nullable="false" />
+          <Property Name="idalsatkul" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TabYetki">
+          <Key>
+            <PropertyRef Name="idYetki" />
+          </Key>
+          <Property Name="idYetki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yetkiadi" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TabHane_Tabisletme">
+          <End Role="Tabisletme" Type="Self.Tabisletme" Multiplicity="1" />
+          <End Role="TabHane" Type="Self.TabHane" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tabisletme">
+              <PropertyRef Name="idisletme" />
+            </Principal>
+            <Dependent Role="TabHane">
+              <PropertyRef Name="idisletme" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabKullanici_TabYetki">
+          <End Role="TabYetki" Type="Self.TabYetki" Multiplicity="1" />
+          <End Role="TabKullanici" Type="Self.TabKullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabYetki">
+              <PropertyRef Name="idYetki" />
+            </Principal>
+            <Dependent Role="TabKullanici">
+              <PropertyRef Name="idyetki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_TabHane">
+          <End Role="TabHane" Type="Self.TabHane" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabHane">
+              <PropertyRef Name="idTavukhane" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="İdHane" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_TabKullanici">
+          <End Role="TabKullanici" Type="Self.TabKullanici" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabKullanici">
+              <PropertyRef Name="idKullanici" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="idKullanici" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_TabRasyon">
+          <End Role="TabRasyon" Type="Self.TabRasyon" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabRasyon">
+              <PropertyRef Name="idRasyon" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="idRasyon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_Tabrasyontarifi">
+          <End Role="Tabrasyontarifi" Type="Self.Tabrasyontarifi" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tabrasyontarifi">
+              <PropertyRef Name="idRasyonTarif" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="idRasyonTarif" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tabrasyontarifi_TabRasyon">
+          <End Role="TabRasyon" Type="Self.TabRasyon" Multiplicity="1" />
+          <End Role="Tabrasyontarifi" Type="Self.Tabrasyontarifi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabRasyon">
+              <PropertyRef Name="idRasyon" />
+            </Principal>
+            <Dependent Role="Tabrasyontarifi">
+              <PropertyRef Name="idRasyon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tabrasyontarifi_Taburun">
+          <End Role="Taburun" Type="Self.Taburun" Multiplicity="1" />
+          <End Role="Tabrasyontarifi" Type="Self.Tabrasyontarifi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taburun">
+              <PropertyRef Name="idurun" />
+            </Principal>
+            <Dependent Role="Tabrasyontarifi">
+              <PropertyRef Name="idUrun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabUrunGenel_TabAlsatkul">
+          <End Role="TabAlsatkul" Type="Self.TabAlsatkul" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabAlsatkul">
+              <PropertyRef Name="idalsatkul" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idalsatkul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabUrunGenel_Tabirsaliye">
+          <End Role="Tabirsaliye" Type="Self.Tabirsaliye" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tabirsaliye">
+              <PropertyRef Name="idirsaliye" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idirsaliye" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabUrunGenel_TabmiktarCins">
+          <End Role="TabmiktarCins" Type="Self.TabmiktarCins" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabmiktarCins">
+              <PropertyRef Name="idmiktarcins" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idmiktarcins" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabUrunGenel_Taburun">
+          <End Role="Taburun" Type="Self.Taburun" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taburun">
+              <PropertyRef Name="idurun" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idUrun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB0345ModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabAlsatkul" EntityType="Self.TabAlsatkul" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabHane" EntityType="Self.TabHane" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tabirsaliye" EntityType="Self.Tabirsaliye" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tabisletme" EntityType="Self.Tabisletme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabKullanici" EntityType="Self.TabKullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabLogRasyon" EntityType="Self.TabLogRasyon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabmiktarCins" EntityType="Self.TabmiktarCins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabRasyon" EntityType="Self.TabRasyon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tabrasyontarifi" EntityType="Self.Tabrasyontarifi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Taburun" EntityType="Self.Taburun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabUrunGenel" EntityType="Self.TabUrunGenel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabYetki" EntityType="Self.TabYetki" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TabHane_Tabisletme" Association="Self.FK_TabHane_Tabisletme">
+            <End Role="Tabisletme" EntitySet="Tabisletme" />
+            <End Role="TabHane" EntitySet="TabHane" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabKullanici_TabYetki" Association="Self.FK_TabKullanici_TabYetki">
+            <End Role="TabYetki" EntitySet="TabYetki" />
+            <End Role="TabKullanici" EntitySet="TabKullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_TabHane" Association="Self.FK_TabLogRasyon_TabHane">
+            <End Role="TabHane" EntitySet="TabHane" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_TabKullanici" Association="Self.FK_TabLogRasyon_TabKullanici">
+            <End Role="TabKullanici" EntitySet="TabKullanici" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_TabRasyon" Association="Self.FK_TabLogRasyon_TabRasyon">
+            <End Role="TabRasyon" EntitySet="TabRasyon" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_Tabrasyontarifi" Association="Self.FK_TabLogRasyon_Tabrasyontarifi">
+            <End Role="Tabrasyontarifi" EntitySet="Tabrasyontarifi" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tabrasyontarifi_TabRasyon" Association="Self.FK_Tabrasyontarifi_TabRasyon">
+            <End Role="TabRasyon" EntitySet="TabRasyon" />
+            <End Role="Tabrasyontarifi" EntitySet="Tabrasyontarifi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tabrasyontarifi_Taburun" Association="Self.FK_Tabrasyontarifi_Taburun">
+            <End Role="Taburun" EntitySet="Taburun" />
+            <End Role="Tabrasyontarifi" EntitySet="Tabrasyontarifi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabUrunGenel_TabAlsatkul" Association="Self.FK_TabUrunGenel_TabAlsatkul">
+            <End Role="TabAlsatkul" EntitySet="TabAlsatkul" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabUrunGenel_Tabirsaliye" Association="Self.FK_TabUrunGenel_Tabirsaliye">
+            <End Role="Tabirsaliye" EntitySet="Tabirsaliye" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabUrunGenel_TabmiktarCins" Association="Self.FK_TabUrunGenel_TabmiktarCins">
+            <End Role="TabmiktarCins" EntitySet="TabmiktarCins" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabUrunGenel_Taburun" Association="Self.FK_TabUrunGenel_Taburun">
+            <End Role="Taburun" EntitySet="Taburun" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB0345Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TabAlsatkul">
+          <Key>
+            <PropertyRef Name="idalsatkul" />
+          </Key>
+          <Property Name="idalsatkul" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="alsatkultur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TabUrunGenel" Relationship="Self.FK_TabUrunGenel_TabAlsatkul" FromRole="TabAlsatkul" ToRole="TabUrunGenel" />
+        </EntityType>
+        <EntityType Name="TabHane">
+          <Key>
+            <PropertyRef Name="idTavukhane" />
+          </Key>
+          <Property Name="idTavukhane" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idisletme" Type="Int32" Nullable="false" />
+          <Property Name="TavukhaneAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tabisletme" Relationship="Self.FK_TabHane_Tabisletme" FromRole="TabHane" ToRole="Tabisletme" />
+          <NavigationProperty Name="TabLogRasyon" Relationship="Self.FK_TabLogRasyon_TabHane" FromRole="TabHane" ToRole="TabLogRasyon" />
+        </EntityType>
+        <EntityType Name="Tabirsaliye">
+          <Key>
+            <PropertyRef Name="idirsaliye" />
+          </Key>
+          <Property Name="idirsaliye" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="irsaliyeKod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="girdiTarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="firma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firma2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fiyat" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="TabUrunGenel" Relationship="Self.FK_TabUrunGenel_Tabirsaliye" FromRole="Tabirsaliye" ToRole="TabUrunGenel" />
+        </EntityType>
+        <EntityType Name="Tabisletme">
+          <Key>
+            <PropertyRef Name="idisletme" />
+          </Key>
+          <Property Name="idisletme" Type="Int32" Nullable="false" />
+          <Property Name="isletmeKod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isletmeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TabHane" Relationship="Self.FK_TabHane_Tabisletme" FromRole="Tabisletme" ToRole="TabHane" />
+        </EntityType>
+        <EntityType Name="TabKullanici">
+          <Key>
+            <PropertyRef Name="idKullanici" />
+          </Key>
+          <Property Name="idKullanici" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kulisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kulsoyisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idyetki" Type="Int32" Nullable="false" />
+          <Property Name="sonerisim" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="kulsif" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TabYetki" Relationship="Self.FK_TabKullanici_TabYetki" FromRole="TabKullanici" ToRole="TabYetki" />
+          <NavigationProperty Name="TabLogRasyon" Relationship="Self.FK_TabLogRasyon_TabKullanici" FromRole="TabKullanici" ToRole="TabLogRasyon" />
+        </EntityType>
+        <EntityType Name="TabLogRasyon">
+          <Key>
+            <PropertyRef Name="idislem" />
+          </Key>
+          <Property Name="idislem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRasyon" Type="Int32" Nullable="false" />
+          <Property Name="idRasyonTarif" Type="Int32" Nullable="false" />
+          <Property Name="İdHane" Type="Int32" Nullable="false" />
+          <Property Name="idKullanici" Type="Int32" Nullable="false" />
+          <Property Name="islemTarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TabHane" Relationship="Self.FK_TabLogRasyon_TabHane" FromRole="TabLogRasyon" ToRole="TabHane" />
+          <NavigationProperty Name="TabKullanici" Relationship="Self.FK_TabLogRasyon_TabKullanici" FromRole="TabLogRasyon" ToRole="TabKullanici" />
+          <NavigationProperty Name="TabRasyon" Relationship="Self.FK_TabLogRasyon_TabRasyon" FromRole="TabLogRasyon" ToRole="TabRasyon" />
+          <NavigationProperty Name="Tabrasyontarifi" Relationship="Self.FK_TabLogRasyon_Tabrasyontarifi" FromRole="TabLogRasyon" ToRole="Tabrasyontarifi" />
+        </EntityType>
+        <EntityType Name="TabmiktarCins">
+          <Key>
+            <PropertyRef Name="idmiktarcins" />
+          </Key>
+          <Property Name="idmiktarcins" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="miktarturu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TabUrunGenel" Relationship="Self.FK_TabUrunGenel_TabmiktarCins" FromRole="TabmiktarCins" ToRole="TabUrunGenel" />
+        </EntityType>
+        <EntityType Name="TabRasyon">
+          <Key>
+            <PropertyRef Name="idRasyon" />
+          </Key>
+          <Property Name="idRasyon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RasyonAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TabLogRasyon" Relationship="Self.FK_TabLogRasyon_TabRasyon" FromRole="TabRasyon" ToRole="TabLogRasyon" />
+          <NavigationProperty Name="Tabrasyontarifi" Relationship="Self.FK_Tabrasyontarifi_TabRasyon" FromRole="TabRasyon" ToRole="Tabrasyontarifi" />
+        </EntityType>
+        <EntityType Name="Tabrasyontarifi">
+          <Key>
+            <PropertyRef Name="idRasyonTarif" />
+          </Key>
+          <Property Name="idRasyonTarif" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRasyon" Type="Int32" Nullable="false" />
+          <Property Name="TarifMiktar" Type="Double" Nullable="false" />
+          <Property Name="idUrun" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TabLogRasyon" Relationship="Self.FK_TabLogRasyon_Tabrasyontarifi" FromRole="Tabrasyontarifi" ToRole="TabLogRasyon" />
+          <NavigationProperty Name="TabRasyon" Relationship="Self.FK_Tabrasyontarifi_TabRasyon" FromRole="Tabrasyontarifi" ToRole="TabRasyon" />
+          <NavigationProperty Name="Taburun" Relationship="Self.FK_Tabrasyontarifi_Taburun" FromRole="Tabrasyontarifi" ToRole="Taburun" />
+        </EntityType>
+        <EntityType Name="Taburun">
+          <Key>
+            <PropertyRef Name="idurun" />
+          </Key>
+          <Property Name="idurun" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="stokKod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tabrasyontarifi" Relationship="Self.FK_Tabrasyontarifi_Taburun" FromRole="Taburun" ToRole="Tabrasyontarifi" />
+          <NavigationProperty Name="TabUrunGenel" Relationship="Self.FK_TabUrunGenel_Taburun" FromRole="Taburun" ToRole="TabUrunGenel" />
+        </EntityType>
+        <EntityType Name="TabUrunGenel">
+          <Key>
+            <PropertyRef Name="idurungenel" />
+          </Key>
+          <Property Name="idurungenel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUrun" Type="Int32" Nullable="false" />
+          <Property Name="idirsaliye" Type="Int32" Nullable="false" />
+          <Property Name="miktar" Type="Double" Nullable="false" />
+          <Property Name="idmiktarcins" Type="Int32" Nullable="false" />
+          <Property Name="idalsatkul" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TabAlsatkul" Relationship="Self.FK_TabUrunGenel_TabAlsatkul" FromRole="TabUrunGenel" ToRole="TabAlsatkul" />
+          <NavigationProperty Name="Tabirsaliye" Relationship="Self.FK_TabUrunGenel_Tabirsaliye" FromRole="TabUrunGenel" ToRole="Tabirsaliye" />
+          <NavigationProperty Name="TabmiktarCins" Relationship="Self.FK_TabUrunGenel_TabmiktarCins" FromRole="TabUrunGenel" ToRole="TabmiktarCins" />
+          <NavigationProperty Name="Taburun" Relationship="Self.FK_TabUrunGenel_Taburun" FromRole="TabUrunGenel" ToRole="Taburun" />
+        </EntityType>
+        <EntityType Name="TabYetki">
+          <Key>
+            <PropertyRef Name="idYetki" />
+          </Key>
+          <Property Name="idYetki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yetkiadi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TabKullanici" Relationship="Self.FK_TabKullanici_TabYetki" FromRole="TabYetki" ToRole="TabKullanici" />
+        </EntityType>
+        <Association Name="FK_TabUrunGenel_TabAlsatkul">
+          <End Role="TabAlsatkul" Type="Self.TabAlsatkul" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabAlsatkul">
+              <PropertyRef Name="idalsatkul" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idalsatkul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabHane_Tabisletme">
+          <End Role="Tabisletme" Type="Self.Tabisletme" Multiplicity="1" />
+          <End Role="TabHane" Type="Self.TabHane" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tabisletme">
+              <PropertyRef Name="idisletme" />
+            </Principal>
+            <Dependent Role="TabHane">
+              <PropertyRef Name="idisletme" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_TabHane">
+          <End Role="TabHane" Type="Self.TabHane" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabHane">
+              <PropertyRef Name="idTavukhane" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="İdHane" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabUrunGenel_Tabirsaliye">
+          <End Role="Tabirsaliye" Type="Self.Tabirsaliye" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tabirsaliye">
+              <PropertyRef Name="idirsaliye" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idirsaliye" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabKullanici_TabYetki">
+          <End Role="TabYetki" Type="Self.TabYetki" Multiplicity="1" />
+          <End Role="TabKullanici" Type="Self.TabKullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabYetki">
+              <PropertyRef Name="idYetki" />
+            </Principal>
+            <Dependent Role="TabKullanici">
+              <PropertyRef Name="idyetki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_TabKullanici">
+          <End Role="TabKullanici" Type="Self.TabKullanici" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabKullanici">
+              <PropertyRef Name="idKullanici" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="idKullanici" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_TabRasyon">
+          <End Role="TabRasyon" Type="Self.TabRasyon" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabRasyon">
+              <PropertyRef Name="idRasyon" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="idRasyon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabLogRasyon_Tabrasyontarifi">
+          <End Role="Tabrasyontarifi" Type="Self.Tabrasyontarifi" Multiplicity="1" />
+          <End Role="TabLogRasyon" Type="Self.TabLogRasyon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tabrasyontarifi">
+              <PropertyRef Name="idRasyonTarif" />
+            </Principal>
+            <Dependent Role="TabLogRasyon">
+              <PropertyRef Name="idRasyonTarif" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabUrunGenel_TabmiktarCins">
+          <End Role="TabmiktarCins" Type="Self.TabmiktarCins" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabmiktarCins">
+              <PropertyRef Name="idmiktarcins" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idmiktarcins" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tabrasyontarifi_TabRasyon">
+          <End Role="TabRasyon" Type="Self.TabRasyon" Multiplicity="1" />
+          <End Role="Tabrasyontarifi" Type="Self.Tabrasyontarifi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabRasyon">
+              <PropertyRef Name="idRasyon" />
+            </Principal>
+            <Dependent Role="Tabrasyontarifi">
+              <PropertyRef Name="idRasyon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tabrasyontarifi_Taburun">
+          <End Role="Taburun" Type="Self.Taburun" Multiplicity="1" />
+          <End Role="Tabrasyontarifi" Type="Self.Tabrasyontarifi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taburun">
+              <PropertyRef Name="idurun" />
+            </Principal>
+            <Dependent Role="Tabrasyontarifi">
+              <PropertyRef Name="idUrun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabUrunGenel_Taburun">
+          <End Role="Taburun" Type="Self.Taburun" Multiplicity="1" />
+          <End Role="TabUrunGenel" Type="Self.TabUrunGenel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taburun">
+              <PropertyRef Name="idurun" />
+            </Principal>
+            <Dependent Role="TabUrunGenel">
+              <PropertyRef Name="idUrun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB0345Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TabAlsatkul" EntityType="Self.TabAlsatkul" />
+          <EntitySet Name="TabHane" EntityType="Self.TabHane" />
+          <EntitySet Name="Tabirsaliye" EntityType="Self.Tabirsaliye" />
+          <EntitySet Name="Tabisletme" EntityType="Self.Tabisletme" />
+          <EntitySet Name="TabKullanici" EntityType="Self.TabKullanici" />
+          <EntitySet Name="TabLogRasyon" EntityType="Self.TabLogRasyon" />
+          <EntitySet Name="TabmiktarCins" EntityType="Self.TabmiktarCins" />
+          <EntitySet Name="TabRasyon" EntityType="Self.TabRasyon" />
+          <EntitySet Name="Tabrasyontarifi" EntityType="Self.Tabrasyontarifi" />
+          <EntitySet Name="Taburun" EntityType="Self.Taburun" />
+          <EntitySet Name="TabUrunGenel" EntityType="Self.TabUrunGenel" />
+          <EntitySet Name="TabYetki" EntityType="Self.TabYetki" />
+          <AssociationSet Name="FK_TabUrunGenel_TabAlsatkul" Association="Self.FK_TabUrunGenel_TabAlsatkul">
+            <End Role="TabAlsatkul" EntitySet="TabAlsatkul" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabHane_Tabisletme" Association="Self.FK_TabHane_Tabisletme">
+            <End Role="Tabisletme" EntitySet="Tabisletme" />
+            <End Role="TabHane" EntitySet="TabHane" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_TabHane" Association="Self.FK_TabLogRasyon_TabHane">
+            <End Role="TabHane" EntitySet="TabHane" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabUrunGenel_Tabirsaliye" Association="Self.FK_TabUrunGenel_Tabirsaliye">
+            <End Role="Tabirsaliye" EntitySet="Tabirsaliye" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabKullanici_TabYetki" Association="Self.FK_TabKullanici_TabYetki">
+            <End Role="TabYetki" EntitySet="TabYetki" />
+            <End Role="TabKullanici" EntitySet="TabKullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_TabKullanici" Association="Self.FK_TabLogRasyon_TabKullanici">
+            <End Role="TabKullanici" EntitySet="TabKullanici" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_TabRasyon" Association="Self.FK_TabLogRasyon_TabRasyon">
+            <End Role="TabRasyon" EntitySet="TabRasyon" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabLogRasyon_Tabrasyontarifi" Association="Self.FK_TabLogRasyon_Tabrasyontarifi">
+            <End Role="Tabrasyontarifi" EntitySet="Tabrasyontarifi" />
+            <End Role="TabLogRasyon" EntitySet="TabLogRasyon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabUrunGenel_TabmiktarCins" Association="Self.FK_TabUrunGenel_TabmiktarCins">
+            <End Role="TabmiktarCins" EntitySet="TabmiktarCins" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tabrasyontarifi_TabRasyon" Association="Self.FK_Tabrasyontarifi_TabRasyon">
+            <End Role="TabRasyon" EntitySet="TabRasyon" />
+            <End Role="Tabrasyontarifi" EntitySet="Tabrasyontarifi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tabrasyontarifi_Taburun" Association="Self.FK_Tabrasyontarifi_Taburun">
+            <End Role="Taburun" EntitySet="Taburun" />
+            <End Role="Tabrasyontarifi" EntitySet="Tabrasyontarifi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabUrunGenel_Taburun" Association="Self.FK_TabUrunGenel_Taburun">
+            <End Role="Taburun" EntitySet="Taburun" />
+            <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB0345ModelStoreContainer" CdmEntityContainer="DB0345Entities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DB0345Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabAlsatkul">
+            <EntityTypeMapping TypeName="DB0345Model.TabAlsatkul">
+              <MappingFragment StoreEntitySet="TabAlsatkul">
+                <ScalarProperty Name="idalsatkul" ColumnName="idalsatkul" />
+                <ScalarProperty Name="alsatkultur" ColumnName="alsatkultur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabHane">
+            <EntityTypeMapping TypeName="DB0345Model.TabHane">
+              <MappingFragment StoreEntitySet="TabHane">
+                <ScalarProperty Name="idTavukhane" ColumnName="idTavukhane" />
+                <ScalarProperty Name="idisletme" ColumnName="idisletme" />
+                <ScalarProperty Name="TavukhaneAdi" ColumnName="TavukhaneAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tabirsaliye">
+            <EntityTypeMapping TypeName="DB0345Model.Tabirsaliye">
+              <MappingFragment StoreEntitySet="Tabirsaliye">
+                <ScalarProperty Name="idirsaliye" ColumnName="idirsaliye" />
+                <ScalarProperty Name="irsaliyeKod" ColumnName="irsaliyeKod" />
+                <ScalarProperty Name="girdiTarih" ColumnName="girdiTarih" />
+                <ScalarProperty Name="firma" ColumnName="firma" />
+                <ScalarProperty Name="firma2" ColumnName="firma2" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tabisletme">
+            <EntityTypeMapping TypeName="DB0345Model.Tabisletme">
+              <MappingFragment StoreEntitySet="Tabisletme">
+                <ScalarProperty Name="idisletme" ColumnName="idisletme" />
+                <ScalarProperty Name="isletmeKod" ColumnName="isletmeKod" />
+                <ScalarProperty Name="isletmeAdi" ColumnName="isletmeAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabKullanici">
+            <EntityTypeMapping TypeName="DB0345Model.TabKullanici">
+              <MappingFragment StoreEntitySet="TabKullanici">
+                <ScalarProperty Name="idKullanici" ColumnName="idKullanici" />
+                <ScalarProperty Name="KulAdi" ColumnName="KulAdi" />
+                <ScalarProperty Name="kulisim" ColumnName="kulisim" />
+                <ScalarProperty Name="kulsoyisim" ColumnName="kulsoyisim" />
+                <ScalarProperty Name="eposta" ColumnName="eposta" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="idyetki" ColumnName="idyetki" />
+                <ScalarProperty Name="sonerisim" ColumnName="sonerisim" />
+                <ScalarProperty Name="kulsif" ColumnName="kulsif" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabLogRasyon">
+            <EntityTypeMapping TypeName="DB0345Model.TabLogRasyon">
+              <MappingFragment StoreEntitySet="TabLogRasyon">
+                <ScalarProperty Name="idislem" ColumnName="idislem" />
+                <ScalarProperty Name="idRasyon" ColumnName="idRasyon" />
+                <ScalarProperty Name="idRasyonTarif" ColumnName="idRasyonTarif" />
+                <ScalarProperty Name="İdHane" ColumnName="İdHane" />
+                <ScalarProperty Name="idKullanici" ColumnName="idKullanici" />
+                <ScalarProperty Name="islemTarihi" ColumnName="islemTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabmiktarCins">
+            <EntityTypeMapping TypeName="DB0345Model.TabmiktarCins">
+              <MappingFragment StoreEntitySet="TabmiktarCins">
+                <ScalarProperty Name="idmiktarcins" ColumnName="idmiktarcins" />
+                <ScalarProperty Name="miktarturu" ColumnName="miktarturu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabRasyon">
+            <EntityTypeMapping TypeName="DB0345Model.TabRasyon">
+              <MappingFragment StoreEntitySet="TabRasyon">
+                <ScalarProperty Name="idRasyon" ColumnName="idRasyon" />
+                <ScalarProperty Name="RasyonAdi" ColumnName="RasyonAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tabrasyontarifi">
+            <EntityTypeMapping TypeName="DB0345Model.Tabrasyontarifi">
+              <MappingFragment StoreEntitySet="Tabrasyontarifi">
+                <ScalarProperty Name="idRasyonTarif" ColumnName="idRasyonTarif" />
+                <ScalarProperty Name="idRasyon" ColumnName="idRasyon" />
+                <ScalarProperty Name="TarifMiktar" ColumnName="TarifMiktar" />
+                <ScalarProperty Name="idUrun" ColumnName="idUrun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taburun">
+            <EntityTypeMapping TypeName="DB0345Model.Taburun">
+              <MappingFragment StoreEntitySet="Taburun">
+                <ScalarProperty Name="idurun" ColumnName="idurun" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="stokKod" ColumnName="stokKod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabUrunGenel">
+            <EntityTypeMapping TypeName="DB0345Model.TabUrunGenel">
+              <MappingFragment StoreEntitySet="TabUrunGenel">
+                <ScalarProperty Name="idurungenel" ColumnName="idurungenel" />
+                <ScalarProperty Name="idUrun" ColumnName="idUrun" />
+                <ScalarProperty Name="idirsaliye" ColumnName="idirsaliye" />
+                <ScalarProperty Name="miktar" ColumnName="miktar" />
+                <ScalarProperty Name="idmiktarcins" ColumnName="idmiktarcins" />
+                <ScalarProperty Name="idalsatkul" ColumnName="idalsatkul" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabYetki">
+            <EntityTypeMapping TypeName="DB0345Model.TabYetki">
+              <MappingFragment StoreEntitySet="TabYetki">
+                <ScalarProperty Name="idYetki" ColumnName="idYetki" />
+                <ScalarProperty Name="Yetkiadi" ColumnName="Yetkiadi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

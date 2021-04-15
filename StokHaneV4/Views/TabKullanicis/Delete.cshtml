@@ -1,0 +1,89 @@
+﻿@model StokHaneV4.Models.TabKullanici
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TabKullanici</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KulAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KulAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kulisim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kulisim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kulsoyisim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kulsoyisim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sonerisim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sonerisim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kulsif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kulsif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabYetki.Yetkiadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabYetki.Yetkiadi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
