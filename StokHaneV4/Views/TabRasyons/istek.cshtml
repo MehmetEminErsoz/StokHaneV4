@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "istek";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table border="1" >
+
+
+    <tr >
+        <td  colspan="2" align="center">@TempData["veri"]</td>
+        @TempData["veri"]
+        
+    </tr>
+    <tr>
+
+
+        <th>Ürün Adi  </th>
+        <th>Miktar    </th>
+    </tr>
+  
+
+
+    @foreach (var item in ViewData["jointables"] as IEnumerable<StokHaneV4.Models.Class1>)
+    {
+
+        <tr >
+            
+            <td>@item.list2.Taburun.UrunAdi  </td>
+            <td >@item.list2.TarifMiktar      </td>
+            @*<td><button>Sil</button></td>
+            <td><button>Sil</button></td>*@
+            
+        </tr>
+    }
+</table>

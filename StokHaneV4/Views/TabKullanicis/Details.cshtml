@@ -5,79 +5,88 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detaylar</h2>
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Kullanıcı Detayları</h6></div>
+    <div class="card-body">
 
-<div>
-    <h4>TabKullanici</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.KulAdi)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.KulAdi)
-        </dd>
+        <div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.kulisim)
-        </dt>
+            
+            <dl class="dl-horizontal">
+                <dt>
+                    Kullanıcı Adı
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.kulisim)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.KulAdi)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.kulsoyisim)
-        </dt>
+                <dt>
+                    İsim
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.kulsoyisim)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.kulisim)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.eposta)
-        </dt>
+                <dt>
+                    Soyisim
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.eposta)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.kulsoyisim)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tel)
-        </dt>
+                <dt>
+                    Eposta
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tel)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.eposta)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.sonerisim)
-        </dt>
+                <dt>
+                    Telefon
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.sonerisim)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.tel)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.kulsif)
-        </dt>
+                <dt>
+                    Son Erişim Tarihi
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.kulsif)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.sonerisim)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TabYetki.Yetkiadi)
-        </dt>
+                <dt>
+                    Kullanıcı şifresi
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TabYetki.Yetkiadi)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.kulsif)
+                </dd>
 
-    </dl>
+                <dt>
+                    Yetki Durumu
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabYetki.Yetkiadi)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            <a href='@Url.Action("Edit", "TabKullanicis" , new {id=Model.idKullanici })' class="btn btn-dark">Düzenle</a>
+
+            <a href='@Url.Action("Index", "TabKullanicis")' class="btn  btn-primary">Kullanıcı Sayfasına dön</a>
+        </p>
+
+    </div>
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idKullanici }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -127,10 +127,18 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TabHanesController.cs" />
+    <Compile Include="Controllers\TabirsaliyesController.cs" />
+    <Compile Include="Controllers\TabisletmesController.cs" />
     <Compile Include="Controllers\TabKullanicisController.cs" />
+    <Compile Include="Controllers\TabRasyonsController.cs" />
+    <Compile Include="Controllers\TabrasyontarifisController.cs" />
+    <Compile Include="Controllers\TabUrunGenelsController.cs" />
+    <Compile Include="Controllers\TaburunsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\DBmodel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2098,6 +2106,45 @@
     <Content Include="Views\TabKullanicis\Details.cshtml" />
     <Content Include="Views\TabKullanicis\Edit.cshtml" />
     <Content Include="Views\TabKullanicis\Index.cshtml" />
+    <Content Include="Views\TabHanes\Create.cshtml" />
+    <Content Include="Views\TabHanes\Delete.cshtml" />
+    <Content Include="Views\TabHanes\Details.cshtml" />
+    <Content Include="Views\TabHanes\Edit.cshtml" />
+    <Content Include="Views\TabHanes\Index.cshtml" />
+    <Content Include="Views\Tabisletmes\Create.cshtml" />
+    <Content Include="Views\Tabisletmes\Delete.cshtml" />
+    <Content Include="Views\Tabisletmes\Details.cshtml" />
+    <Content Include="Views\Tabisletmes\Edit.cshtml" />
+    <Content Include="Views\Tabisletmes\Index.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Create.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Delete.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Details.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Edit.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Index.cshtml" />
+    <Content Include="Views\Taburuns\Create.cshtml" />
+    <Content Include="Views\Taburuns\Delete.cshtml" />
+    <Content Include="Views\Taburuns\Details.cshtml" />
+    <Content Include="Views\Taburuns\Edit.cshtml" />
+    <Content Include="Views\Taburuns\Index.cshtml" />
+    <Content Include="Views\TabUrunGenels\Create.cshtml" />
+    <Content Include="Views\TabUrunGenels\Delete.cshtml" />
+    <Content Include="Views\TabUrunGenels\Details.cshtml" />
+    <Content Include="Views\TabUrunGenels\Edit.cshtml" />
+    <Content Include="Views\TabUrunGenels\Index.cshtml" />
+    <Content Include="Views\Tabrasyontarifis\Create.cshtml" />
+    <Content Include="Views\Tabrasyontarifis\Delete.cshtml" />
+    <Content Include="Views\Tabrasyontarifis\Details.cshtml" />
+    <Content Include="Views\Tabrasyontarifis\Edit.cshtml" />
+    <Content Include="Views\Tabrasyontarifis\Index.cshtml" />
+    <Content Include="Views\TabRasyons\Create.cshtml" />
+    <Content Include="Views\TabRasyons\Delete.cshtml" />
+    <Content Include="Views\TabRasyons\Details.cshtml" />
+    <Content Include="Views\TabRasyons\Edit.cshtml" />
+    <Content Include="Views\TabRasyons\Index.cshtml" />
+    <Content Include="Views\TabRasyons\istek.cshtml" />
+    <Content Include="Views\Home\istekview.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Tabrasyontarifis\istenenindex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,79 @@
+﻿@model StokHaneV4.Models.TabUrunGenel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">İrsaliyeyi silmek istediğinizden emin misiniz ?</h6></div>
+    <div class="card-body">
+
+
+        
+
+        
+        <div>
+            
+            <dl class="dl-horizontal">
+                <dt>
+                    Ürün Adı
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Taburun.UrunAdi)
+                </dd>
+                <dt>
+                    Miktar
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.miktar)
+                </dd>
+                <dt>
+                    Cins
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabmiktarCins.miktarturu)
+                </dd>
+                <dt>
+                    Olay
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabAlsatkul.alsatkultur)
+                </dd>
+
+                <dt>
+                    İrsaliye Kodu
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Tabirsaliye.irsaliyeKod)
+                </dd>
+
+
+
+
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            
+            <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">Listeye Dön</a>
+        </div>
+            }
+        </div>
+    </div>
+
+
+</div>

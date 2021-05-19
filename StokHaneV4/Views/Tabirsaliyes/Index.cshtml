@@ -1,0 +1,58 @@
+﻿@model IEnumerable<StokHaneV4.Models.Tabirsaliye>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.irsaliyeKod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.girdiTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firma2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fiyat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.irsaliyeKod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.girdiTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firma2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idirsaliye }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idirsaliye }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idirsaliye })
+        </td>
+    </tr>
+}
+
+</table>

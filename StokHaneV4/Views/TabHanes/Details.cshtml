@@ -1,0 +1,35 @@
+﻿@model StokHaneV4.Models.TabHane
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TabHane</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TavukhaneAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TavukhaneAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tabisletme.isletmeKod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tabisletme.isletmeKod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTavukhane }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

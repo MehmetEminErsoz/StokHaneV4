@@ -1,0 +1,90 @@
+﻿@model IEnumerable<StokHaneV4.Models.Tabrasyontarifi>
+@{
+    ViewBag.Title = "istenenindex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Custom fonts for this template -->
+<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+<!-- Custom styles for this page -->
+<link href="~/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+
+          
+
+        </h6>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered " id="dataTable" align="center">
+
+                    <thead class="container">
+                        <tr>
+                            <th>Rasyon Adı</th>
+                            <th>Ürün </th>
+                            <th>Miktar</th>
+                            <th>İşlemler</th>
+
+
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TabRasyon.RasyonAdi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Taburun.UrunAdi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TarifMiktar)
+                                </td>
+
+
+                                <td>
+
+                                    <a href='@Url.Action("Edit","Tabrasyontarifis",new {id=item.idRasyonTarif})' class="btn btn-dark">Düzenle</a>
+                                    <a href='@Url.Action("Delete","Tabrasyontarifis", new {id=item.idRasyonTarif})' class="btn btn-danger">Sil</a>
+
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+
+                <h6 >
+                    <a href='@Url.Action("Create","Tabrasyontarifis")' class="btn btn-success">Ürün Ekle</a>
+                </h6>
+                
+                
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+

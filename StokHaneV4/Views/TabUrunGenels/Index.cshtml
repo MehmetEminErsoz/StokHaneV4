@@ -1,0 +1,95 @@
+﻿@model IEnumerable<StokHaneV4.Models.TabUrunGenel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+<!-- Custom styles for this page -->
+<link href="~/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> 
+        <h6 class="m-0 font-weight-bold text-primary">Ürün Genel Sayfası</h6>
+
+
+                                   <div class="card-body">
+                                       <div class="table-responsive">
+                                           <table class="table table-bordered " id="dataTable" align="center">
+                                               <thead class="container">
+                                                   <tr>
+                                                       <th>
+                                                           Ürün
+                                                       </th>
+                                                       <th>
+                                                           Olay
+                                                       </th>
+                                                       <th>
+                                                           İrsaliye Kodu
+                                                       </th>
+                                                       <th>
+                                                           Miktar
+                                                       </th>
+                                                       <th>
+                                                           Cins
+                                                       </th>
+
+                                                       <th></th>
+                                                   </tr>
+                                                   </thead>
+
+                                               <tbody>
+                                                   @foreach (var item in Model)
+                                                   {
+                                                       <tr>
+                                                           <td>
+                                                               @Html.DisplayFor(modelItem => item.Taburun.UrunAdi)
+                                                           </td>
+                                                           <td>
+                                                               @Html.DisplayFor(modelItem => item.TabAlsatkul.alsatkultur)
+                                                           </td>
+                                                           <td>
+                                                               @Html.DisplayFor(modelItem => item.Tabirsaliye.irsaliyeKod)
+                                                           </td>
+                                                           <td>
+                                                               @Html.DisplayFor(modelItem => item.miktar)
+                                                           </td>
+                                                           <td>
+                                                               @Html.DisplayFor(modelItem => item.TabmiktarCins.miktarturu)
+                                                           </td>
+
+
+
+                                                           <td>
+                                                               
+
+
+                                                               <a href='@Url.Action("Delete", "TabUrunGenels" , new {id=item.idurungenel })' class="btn btn-danger">Sil</a>
+
+                                                               <a href='@Url.Action("Edit", "TabUrunGenels" , new {id=item.idurungenel })' class="btn btn-dark">Düzenle</a>
+
+                                                               
+                                                           </td>
+                                                       </tr>
+                                                   }
+                                               </tbody>
+                                           </table>
+                                       </div>
+                                       <p>
+                                           <div class="text-md-right"><a href='@Url.Action("Create", "TabUrunGenels" )' class="btn btn-info ">Yeni ürün bilgisi</a></div>
+                                       </p>
+                                   </div>
+    </div>
+
+
+</div>

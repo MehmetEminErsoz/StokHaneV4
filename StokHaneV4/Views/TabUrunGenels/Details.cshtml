@@ -1,0 +1,59 @@
+﻿@model StokHaneV4.Models.TabUrunGenel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TabUrunGenel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.miktar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.miktar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabAlsatkul.alsatkultur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabAlsatkul.alsatkultur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tabirsaliye.irsaliyeKod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tabirsaliye.irsaliyeKod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabmiktarCins.miktarturu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabmiktarCins.miktarturu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Taburun.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taburun.UrunAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idurungenel }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

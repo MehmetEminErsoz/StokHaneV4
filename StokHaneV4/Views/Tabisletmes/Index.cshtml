@@ -1,0 +1,40 @@
+﻿@model IEnumerable<StokHaneV4.Models.Tabisletme>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.isletmeKod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isletmeAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.isletmeKod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isletmeAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idisletme }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idisletme }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idisletme })
+        </td>
+    </tr>
+}
+
+</table>

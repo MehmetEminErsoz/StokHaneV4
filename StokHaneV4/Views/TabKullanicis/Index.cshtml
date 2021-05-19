@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Kullanıcı Sayfası</h2>
+
 
 <!-- Custom fonts for this template -->
 <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -23,11 +23,11 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">
-            Kullanıcı Tablosu
+            Kullanıcılar
 
 
         </h6>
-        
+
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered " id="dataTable" align="center">
@@ -52,7 +52,7 @@
                                 Yetki
                             </th>
 
-                            <th ><a href='@Url.Action("Create", "TabKullanicis" )' class="btn btn-info">Yeni Kullanıcı Ekle</a></th>
+                            <th><div class="text-md-right"><a href='@Url.Action("Create", "TabKullanicis" )' class="btn btn-info ">Yeni Kullanıcı Ekle</a></div></th>
                         </tr>
                     </thead>
 
@@ -76,9 +76,9 @@
                                     @Html.DisplayFor(modelItem => item.tel)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem =>item.TabYetki.Yetkiadi)
+                                    @Html.DisplayFor(modelItem => item.TabYetki.Yetkiadi)
                                 </td>
-                                <td >
+                                <td align="right">
                                     @*<button class="btn btn-danger">@Html.ActionLink("Sil", "Delete", new { id = item.idKullanici })</button>
                                     <button class="btn btn-light"> @Html.ActionLink("Düzenle", "Edit", new { id = item.idKullanici }) </button>
                                     <button class="btn btn-info">@Html.ActionLink("Detaylar", "Details", new { id = item.idKullanici })</button>*@
@@ -99,7 +99,8 @@
 
         </div>
 
-
+        
+        
 
 
 

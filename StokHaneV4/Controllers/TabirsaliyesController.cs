@@ -10,118 +10,107 @@ using StokHaneV4.Models;
 
 namespace StokHaneV4.Controllers
 {
-
-
-    
-    public class TabKullanicisController : Controller
+    public class TabirsaliyesController : Controller
     {
         private DB0345Entities db = new DB0345Entities();
 
-        // GET: TabKullanicis
-
-        [Authorize]
+        // GET: Tabirsaliyes
         public ActionResult Index()
         {
-            var tabKullanici = db.TabKullanici.Include(t => t.TabYetki);
-            return View(tabKullanici.ToList());
+            return View(db.Tabirsaliye.ToList());
         }
 
-        // GET: TabKullanicis/Details/5
+        // GET: Tabirsaliyes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TabKullanici tabKullanici = db.TabKullanici.Find(id);
-            if (tabKullanici == null)
+            Tabirsaliye tabirsaliye = db.Tabirsaliye.Find(id);
+            if (tabirsaliye == null)
             {
                 return HttpNotFound();
             }
-            return View(tabKullanici);
+            return View(tabirsaliye);
         }
 
-        // GET: TabKullanicis/Create
+        // GET: Tabirsaliyes/Create
         public ActionResult Create()
         {
-            ViewBag.idyetki = new SelectList(db.TabYetki, "idYetki", "Yetkiadi");
             return View();
         }
 
-        // POST: TabKullanicis/Create
+        // POST: Tabirsaliyes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idKullanici,KulAdi,kulisim,kulsoyisim,eposta,tel,idyetki,sonerisim,kulsif")] TabKullanici tabKullanici)
+        public ActionResult Create([Bind(Include = "idirsaliye,irsaliyeKod,girdiTarih,firma,firma2,fiyat")] Tabirsaliye tabirsaliye)
         {
             if (ModelState.IsValid)
             {
-                db.TabKullanici.Add(tabKullanici);
+                db.Tabirsaliye.Add(tabirsaliye);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-           
 
-            ViewBag.idyetki = new SelectList(db.TabYetki, "idYetki", "Yetkiadi", tabKullanici.idyetki);
-            return View(tabKullanici);
+            return View(tabirsaliye);
         }
 
-        // GET: TabKullanicis/Edit/5
+        // GET: Tabirsaliyes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TabKullanici tabKullanici = db.TabKullanici.Find(id);
-            if (tabKullanici == null)
+            Tabirsaliye tabirsaliye = db.Tabirsaliye.Find(id);
+            if (tabirsaliye == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idyetki = new SelectList(db.TabYetki, "idYetki", "Yetkiadi", tabKullanici.idyetki);
-            return View(tabKullanici);
+            return View(tabirsaliye);
         }
 
-        // POST: TabKullanicis/Edit/5
+        // POST: Tabirsaliyes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idKullanici,KulAdi,kulisim,kulsoyisim,eposta,tel,idyetki,sonerisim,kulsif")] TabKullanici tabKullanici)
+        public ActionResult Edit([Bind(Include = "idirsaliye,irsaliyeKod,girdiTarih,firma,firma2,fiyat")] Tabirsaliye tabirsaliye)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tabKullanici).State = EntityState.Modified;
+                db.Entry(tabirsaliye).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idyetki = new SelectList(db.TabYetki, "idYetki", "Yetkiadi", tabKullanici.idyetki);
-            return View(tabKullanici);
+            return View(tabirsaliye);
         }
 
-        // GET: TabKullanicis/Delete/5
+        // GET: Tabirsaliyes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TabKullanici tabKullanici = db.TabKullanici.Find(id);
-            if (tabKullanici == null)
+            Tabirsaliye tabirsaliye = db.Tabirsaliye.Find(id);
+            if (tabirsaliye == null)
             {
                 return HttpNotFound();
             }
-            return View(tabKullanici);
+            return View(tabirsaliye);
         }
 
-        // POST: TabKullanicis/Delete/5
+        // POST: Tabirsaliyes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TabKullanici tabKullanici = db.TabKullanici.Find(id);
-            db.TabKullanici.Remove(tabKullanici);
+            Tabirsaliye tabirsaliye = db.Tabirsaliye.Find(id);
+            db.Tabirsaliye.Remove(tabirsaliye);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

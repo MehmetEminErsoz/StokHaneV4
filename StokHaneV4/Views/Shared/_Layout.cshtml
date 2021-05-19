@@ -38,7 +38,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-home"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">StokHane <sup>4.0</sup></div>
+                <div class="sidebar-brand-text mx-3">StokHane <sup>5.0</sup></div>
             </a>
 
             <!-- Divider -->
@@ -47,8 +47,8 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/Home/Index">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Main</span>
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Anasayfa</span>
                 </a>
             </li>
 
@@ -60,23 +60,6 @@
                 Arayüz
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-box"></i>
-                    <span>Ürün</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Ürün işlemleri:</h6>
-                        <a class="collapse-item" href="#">Ürün Ekle</a>
-                        <a class="collapse-item" href="#">Stok Durumu</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
@@ -87,10 +70,50 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kullanıcı işlemleri:</h6>
-                        <a class="collapse-item" href="~/Views/TabKullanicis/Index.cshtml">Kullanıcılar</a>
-                        <a class="collapse-item" href="~/Views/TabKullanicis/Create.cshtml">Kullanıcı Ekle</a>
+                        <a class="collapse-item" href="~/TabKullanicis/Index">Kullanıcılar</a>
+                        <a class="collapse-item" href="~/TabKullanicis/Create">Kullanıcı Ekle</a>
 
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <a class="collapse-item" href="#">#Boş</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-box"></i>
+                    <span>Ürün</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Ürün işlemleri:</h6>
+                        <a class="collapse-item" href="#">#Ürün Ekle</a>
+                        <a class="collapse-item" href="~/TabUrunGenels/Index">Ürün genel sayfası</a>
+                        <a class="collapse-item" href="~/Taburuns/Index">Ürün listesi</a>
+                        <a class="collapse-item" href="#">#Stok Durumu</a>
+                        <a class="collapse-item" href="#">#Boş</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRasyon"
+                   aria-expanded="true" aria-controls="collapseRasyon">
+                    <i class="fas fa-book"></i>
+                    <span>Rasyon</span>
+                </a>
+                <div id="collapseRasyon" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Rasyon:</h6>
+                        <a class="collapse-item" href="~/TabRasyons/Index">Rasyon Kalıbı oluştur</a>
+                        <a class="collapse-item" href="~/Tabrasyontarifis/Index">Tüm Rasyon ürünleri</a>
+                        <a class="collapse-item" href="~/TabRasyons/Create">Rasyon Oluştur</a>
                     </div>
                 </div>
             </li>
@@ -114,14 +137,14 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Rasyon:</h6>
-                        <a class="collapse-item" href="#">Rasyon Hazırla</a>
-                        <a class="collapse-item" href="#">Rasyon Kalıbı oluştur</a>
-                        <a class="collapse-item" href="#">Rasyon</a>
+
+                        <h6 class="collapse-header">İrsaliye:</h6>
+                        <div class="collapse-divider"></div>
+                        <a class="collapse-item" href="~/Tabirsaliyes/Index">İrsaliye ekle</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">İşletmelerim:</h6>
-                        <a class="collapse-item" href="#">İşletmelerim</a>
-                        <a class="collapse-item" href="#">Tavukhanelerim</a>
+                        <a class="collapse-item" href="~/Tabisletmes/Index">İşletmelerim</a>
+                        <a class="collapse-item" href="~/TabHanes/Index">Tavukhanelerim</a>
                     </div>
                 </div>
             </li>
@@ -194,7 +217,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Emin Ersöz</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@HttpContext.Current.User.Identity.Name</span>
                                 <img class="img-profile rounded-circle"
                                      src="~/img/undraw_profile.svg">
                             </a>
@@ -270,7 +293,7 @@
                 <div class="modal-body">Güvenli çıkış yapmak istediğinizden emin misiniz?</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">İptal</button>
-                    <a class="btn btn-primary" href="login.html">Çıkış</a>
+                    <a class="btn btn-primary" href="/Home/Logout">Çıkış</a>
                 </div>
             </div>
         </div>
@@ -297,24 +320,31 @@
 
     <!--<script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-
     <!-- Core plugin JavaScript-->
     <!--<script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>-->
-
     <!-- Custom scripts for all pages-->
     <!--<script src="~/js/sb-admin-2.min.js"></script>-->
 
-    
+
     <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    
+
     <script src="~/js/demo/datatables-demo.js"></script>
 
 
 
 
+    <!--<script-------------------------------------------------.js"></script>-->
 
+    <!--<script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+
+    <!-- Core plugin JavaScript-->
+    <!--<script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
+
+    <!-- Custom scripts for all pages-->
+    <!--<script src="js/sb-admin-2.min.js"></script>-->
 
 
 

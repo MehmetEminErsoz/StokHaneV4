@@ -1,0 +1,50 @@
+﻿@model IEnumerable<StokHaneV4.Models.Taburun>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Ürünler</h6></div>
+    <div class="card-body">
+
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    Ürün Adı
+                </th>
+                <th>
+                    Stok Kodu
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrunAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.stokKod)
+                    </td>
+                    <td class="text-md-right">
+                        <a href='@Url.Action("Delete", "Taburuns" , new {id=item.idurun })' class="btn btn-danger">Sil</a>
+
+                        <a href='@Url.Action("Edit", "Taburuns" , new {id=item.idurun })' class="btn btn-dark">Düzenle</a>
+
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+        <div class="text-md-right"><a href='@Url.Action("Create", "Taburuns" )' class="btn btn-info ">Yeni ürün Ekle</a></div>
+
+    </div>
+
+
+</div>

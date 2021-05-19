@@ -1,0 +1,66 @@
+﻿@model StokHaneV4.Models.Tabrasyontarifi
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Sil ?</h6></div>
+    <div class="card-body">
+
+        <div>
+            <h6>Rasyondan ürünü çıkarmak istediğinize emin misiniz ?</h6>
+            <dl class="dl-horizontal">
+
+                <dt>
+                    Rasyon Adı
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabRasyon.RasyonAdi)
+                </dd>
+
+                <dt>
+                    Ürün
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Taburun.UrunAdi)
+                </dd>
+
+                <dt>
+                    Miktar
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TarifMiktar)
+                </dd>
+
+
+
+
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Sil" class="btn btn-danger" /> 
+                    <a href='@Url.Action("Index","TabRasyons")' class="btn btn-primary">Listeye Dön</a>
+                    
+                    
+                </div>
+            }
+        </div>
+    </div>
+
+
+</div>

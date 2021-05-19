@@ -5,85 +5,91 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Kullanıcıyı silmek istediğinize emin misiniz ? </h6></div>
+    <div class="card-body">
+        <div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TabKullanici</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.KulAdi)
-        </dt>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    Kullanıcı Adı
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.KulAdi)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.KulAdi)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.kulisim)
-        </dt>
+                <dt>
+                    İsim
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.kulisim)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.kulisim)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.kulsoyisim)
-        </dt>
+                <dt>
+                    Soyisim
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.kulsoyisim)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.kulsoyisim)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.eposta)
-        </dt>
+                <dt>
+                    Eposta
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.eposta)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.eposta)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tel)
-        </dt>
+                <dt>
+                    Telefon
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tel)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.tel)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.sonerisim)
-        </dt>
+                <dt>
+                    Son Erişim Tarihi
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.sonerisim)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.sonerisim)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.kulsif)
-        </dt>
+                <dt>
+                    Şifre
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.kulsif)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.kulsif)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TabYetki.Yetkiadi)
-        </dt>
+                <dt>
+                    Yetki
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TabYetki.Yetkiadi)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TabYetki.Yetkiadi)
+                </dd>
 
-    </dl>
+            </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                <div class="form-actions no-color">
+                    <input type="submit" value="Sil" class="btn btn-danger" />
+                    <a href='@Url.Action("Index", "TabKullanicis")' class="btn btn-primary">Kullanıcı Sayfasına Dön</a>
+                </div>
+            }
         </div>
-    }
+
+    </div>
+
+
 </div>

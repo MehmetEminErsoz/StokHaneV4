@@ -1,0 +1,45 @@
+﻿@model StokHaneV4.Models.Tabrasyontarifi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>hangisayfa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TarifMiktar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TarifMiktar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TabRasyon.RasyonAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabRasyon.RasyonAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Taburun.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taburun.UrunAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idRasyonTarif }) |
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>

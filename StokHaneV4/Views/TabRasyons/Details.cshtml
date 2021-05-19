@@ -1,0 +1,86 @@
+﻿@model StokHaneV4.Models.TabRasyon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!-- Custom fonts for this template -->
+<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+<!-- Custom styles for this page -->
+<link href="~/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+            @Html.DisplayFor(Model=>Model.RasyonAdi)
+
+
+        </h6>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered " id="dataTable" align="center">
+
+                    <thead class="container">
+                        <tr>
+                            <th>Ürün </th>
+                            <th>Miktar</th>
+                            
+
+                           
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in ViewData["jointables"] as IEnumerable<StokHaneV4.Models.Class1>)
+                        {
+
+                            if (item.list2 != null)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.list2.Taburun.UrunAdi
+                                    </td>
+                                    <td>@item.list2.TarifMiktar</td>
+                                    
+                                    
+                                </tr>
+
+                            }
+                            else
+                            {
+                                <tr>Ürün bulunmamakta</tr>
+                            }
+
+                        }
+
+
+                    </tbody>
+                </table>
+                <a href='@Url.Action("Index","TabRasyons")' class="btn btn-info">Listeye Geri dön</a>
+                <a href='@Url.Action("istenenindex","Tabrasyontarifis",new {id=Model.idRasyon})' class="btn btn-facebook">Rasyon içeriğini değiştir</a>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+</div>

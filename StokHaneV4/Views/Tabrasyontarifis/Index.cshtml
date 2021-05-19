@@ -1,0 +1,60 @@
+﻿@model IEnumerable<StokHaneV4.Models.Tabrasyontarifi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Tüm Rasyon ürünleri</h6></div>
+    <div class="card-body">
+
+        
+        <p>
+            @Html.ActionLink("Yeni Ürün Ekle", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Rasyon Adı
+                </th>
+                <th>
+                    Ürün
+                </th>
+                <th>
+                    Miktar
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model@*.Where(s=>s.idRasyon==2)*@)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabRasyon.RasyonAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Taburun.UrunAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TarifMiktar)
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.idRasyonTarif }) |
+            @Html.ActionLink("Detaylar", "Details", new { id = item.idRasyonTarif }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.idRasyonTarif })
+        </td>
+    </tr>
+}
+
+        </table>
+
+    </div>
+
+
+</div>

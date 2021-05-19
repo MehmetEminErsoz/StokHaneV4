@@ -1,0 +1,51 @@
+﻿@model StokHaneV4.Models.TabRasyon
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Rasyon Adını değiştir...</h6></div>
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            
+            @Html.HiddenFor(model => model.idRasyon)
+
+            <div class="form-group">
+                
+                <h6 class="control-label col-md-10"> Rasyon Adını Giriniz...</h6>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.RasyonAdi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RasyonAdi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group " >
+                <div  class="col-md-offset-2 col-md-10">
+                    <input  type="submit" value="Kaydet" class="btn btn-success" />
+                    <a href='@Url.Action("Index","TabRasyons")' class="btn btn-primary">Listeye Dön</a>
+                </div>
+            </div>
+        </div>
+        }
+
+        
+
+    </div>
+
+
+</div>
