@@ -16,7 +16,7 @@ namespace StokHaneV4.Controllers
 
     public class TabrasyontarifisController : Controller
     {
-        private DB0345Entities db = new DB0345Entities();
+        private DB0345Entities1 db = new DB0345Entities1();
 
         // GET: Tabrasyontarifis
         
@@ -42,11 +42,22 @@ namespace StokHaneV4.Controllers
         }
 
         // GET: Tabrasyontarifis/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.idRasyon = new SelectList(db.TabRasyon, "idRasyon", "RasyonAdi");
-            ViewBag.idUrun = new SelectList(db.Taburun, "idurun", "UrunAdi");
+            if (id!=null)
+            {
+                ViewBag.idRasyon = new SelectList(db.TabRasyon.Where(s => s.idRasyon == id).ToList(), "idRasyon", "RasyonAdi");
+                ViewBag.idUrun = new SelectList(db.Taburun, "idurun", "UrunAdi");
+
+                return View();
+            }
+            else
+            {
+                ViewBag.idRasyon = new SelectList(db.TabRasyon, "idRasyon", "RasyonAdi");
+                ViewBag.idUrun = new SelectList(db.Taburun, "idurun", "UrunAdi");
+            }
             return View();
+
         }
 
         // POST: Tabrasyontarifis/Create
@@ -60,7 +71,8 @@ namespace StokHaneV4.Controllers
             {
                 db.Tabrasyontarifi.Add(tabrasyontarifi);
                 db.SaveChanges();
-                return RedirectToAction("Index","TabRasyons");
+                var id = tabrasyontarifi.idRasyon;
+                return RedirectToAction("istenenindex","Tabrasyontarifis",new { id });
                 
             }
             
@@ -81,6 +93,8 @@ namespace StokHaneV4.Controllers
             {
                 return HttpNotFound();
             }
+            
+
             ViewBag.idRasyon = new SelectList(db.TabRasyon, "idRasyon", "RasyonAdi", tabrasyontarifi.idRasyon);
             ViewBag.idUrun = new SelectList(db.Taburun, "idurun", "UrunAdi", tabrasyontarifi.idUrun);
             return View(tabrasyontarifi);
@@ -97,7 +111,8 @@ namespace StokHaneV4.Controllers
             {
                 db.Entry(tabrasyontarifi).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var id = tabrasyontarifi.idRasyon;
+                return RedirectToAction("istenenindex","Tabrasyontarifis",new { id });
             }
             ViewBag.idRasyon = new SelectList(db.TabRasyon, "idRasyon", "RasyonAdi", tabrasyontarifi.idRasyon);
             ViewBag.idUrun = new SelectList(db.Taburun, "idurun", "UrunAdi", tabrasyontarifi.idUrun);
@@ -127,7 +142,8 @@ namespace StokHaneV4.Controllers
             Tabrasyontarifi tabrasyontarifi = db.Tabrasyontarifi.Find(id);
             db.Tabrasyontarifi.Remove(tabrasyontarifi);
             db.SaveChanges();
-            return RedirectToAction("Index","TabRasyons");
+            id = tabrasyontarifi.idRasyon;
+            return RedirectToAction("istenenindex", "Tabrasyontarifis", new { id });
         }
 
         protected override void Dispose(bool disposing)
@@ -141,14 +157,18 @@ namespace StokHaneV4.Controllers
 
 
 
-       
-        
+
+
         public ActionResult istenenindex(int? id)
         {
-            
+
             var tabrasyontarifi = db.Tabrasyontarifi.Include(t => t.TabRasyon).Include(t => t.Taburun);
             var secilitarif = tabrasyontarifi.Where(s => s.idRasyon == id);
 
+          
+            
+            
+            
             return View(secilitarif.ToList());
         }
     }

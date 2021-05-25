@@ -139,59 +139,59 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Class1.cs" />
-    <Compile Include="Models\DBmodel.Context.cs">
+    <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBmodel.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DBmodel.cs">
+    <Compile Include="Models\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DBmodel.Designer.cs">
+    <Compile Include="Models\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBmodel.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabAlsatkul.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabHane.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabirsaliye.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabisletme.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabKullanici.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabLogRasyon.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabmiktarCins.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabRasyon.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabrasyontarifi.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Taburun.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabUrunGenel.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabYetki.cs">
-      <DependentUpon>DBmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -218,24 +218,24 @@
     <Content Include="js\demo\datatables-demo.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
-    <Content Include="Models\DBmodel.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBmodel.Context.cs</LastGenOutput>
-      <DependentUpon>DBmodel.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DBmodel.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBmodel.edmx</DependentUpon>
-      <LastGenOutput>DBmodel.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DBmodel.edmx">
+    <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBmodel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DBmodel.edmx.diagram">
-      <DependentUpon>DBmodel.edmx</DependentUpon>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2116,21 +2116,11 @@
     <Content Include="Views\Tabisletmes\Details.cshtml" />
     <Content Include="Views\Tabisletmes\Edit.cshtml" />
     <Content Include="Views\Tabisletmes\Index.cshtml" />
-    <Content Include="Views\Tabirsaliyes\Create.cshtml" />
-    <Content Include="Views\Tabirsaliyes\Delete.cshtml" />
-    <Content Include="Views\Tabirsaliyes\Details.cshtml" />
-    <Content Include="Views\Tabirsaliyes\Edit.cshtml" />
-    <Content Include="Views\Tabirsaliyes\Index.cshtml" />
     <Content Include="Views\Taburuns\Create.cshtml" />
     <Content Include="Views\Taburuns\Delete.cshtml" />
     <Content Include="Views\Taburuns\Details.cshtml" />
     <Content Include="Views\Taburuns\Edit.cshtml" />
     <Content Include="Views\Taburuns\Index.cshtml" />
-    <Content Include="Views\TabUrunGenels\Create.cshtml" />
-    <Content Include="Views\TabUrunGenels\Delete.cshtml" />
-    <Content Include="Views\TabUrunGenels\Details.cshtml" />
-    <Content Include="Views\TabUrunGenels\Edit.cshtml" />
-    <Content Include="Views\TabUrunGenels\Index.cshtml" />
     <Content Include="Views\Tabrasyontarifis\Create.cshtml" />
     <Content Include="Views\Tabrasyontarifis\Delete.cshtml" />
     <Content Include="Views\Tabrasyontarifis\Details.cshtml" />
@@ -2145,6 +2135,16 @@
     <Content Include="Views\Home\istekview.cshtml" />
     <Content Include="Views\Home\login.cshtml" />
     <Content Include="Views\Tabrasyontarifis\istenenindex.cshtml" />
+    <Content Include="Views\TabUrunGenels\Create.cshtml" />
+    <Content Include="Views\TabUrunGenels\Delete.cshtml" />
+    <Content Include="Views\TabUrunGenels\Details.cshtml" />
+    <Content Include="Views\TabUrunGenels\Edit.cshtml" />
+    <Content Include="Views\TabUrunGenels\Index.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Create.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Delete.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Details.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Edit.cshtml" />
+    <Content Include="Views\Tabirsaliyes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,37 +5,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Tabisletme</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.isletmeKod)
-        </dt>
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-danger">İşletmeyi silmek istediğinize emin misiniz ?</h6></div>
+    <div class="card-body">
 
-        <dd>
-            @Html.DisplayFor(model => model.isletmeKod)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.isletmeAdi)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.isletmeAdi)
-        </dd>
+        <div>
 
-    </dl>
+            <dl class="dl-horizontal">
+                <dt>
+                    İşletme kod
+                </dt>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                <dd>
+                    @Html.DisplayFor(model => model.isletmeKod)
+                </dd>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                <dt>
+                   İşletme Adı
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.isletmeAdi)
+                </dd>
+
+            </dl>
+            <hr />
+            <p class="text-danger">Güvenlik amacıyla</p>
+            <p>İşletmeyi silmeden önce İçersindeki tavukhaneleri silmeniz gerekmektedir.</p>
+            
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Sil" class="btn btn-danger" /> 
+                    <a href='@Url.Action("Index","Tabisletmes")' class="btn btn-primary">İptal</a>
+
+                    
+                </div>
+            }
         </div>
-    }
+
+
+    </div>
+
+
 </div>
+

@@ -12,11 +12,12 @@ namespace StokHaneV4.Controllers
 {
     public class TabirsaliyesController : Controller
     {
-        private DB0345Entities db = new DB0345Entities();
+        private DB0345Entities1 db = new DB0345Entities1();
 
         // GET: Tabirsaliyes
         public ActionResult Index()
         {
+            
             return View(db.Tabirsaliye.ToList());
         }
 
@@ -46,7 +47,7 @@ namespace StokHaneV4.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idirsaliye,irsaliyeKod,girdiTarih,firma,firma2,fiyat")] Tabirsaliye tabirsaliye)
+        public ActionResult Create([Bind(Include = "idirsaliye,irsaliyeKod,girdiTarih,firma,firma2")] Tabirsaliye tabirsaliye)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace StokHaneV4.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idirsaliye,irsaliyeKod,girdiTarih,firma,firma2,fiyat")] Tabirsaliye tabirsaliye)
+        public ActionResult Edit([Bind(Include = "idirsaliye,irsaliyeKod,girdiTarih,firma,firma2")] Tabirsaliye tabirsaliye)
         {
             if (ModelState.IsValid)
             {
@@ -110,6 +111,9 @@ namespace StokHaneV4.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Tabirsaliye tabirsaliye = db.Tabirsaliye.Find(id);
+
+            //çapraz tabloyu sildirdim -->
+            db.TabUrunGenel.RemoveRange(tabirsaliye.TabUrunGenel);
             db.Tabirsaliye.Remove(tabirsaliye);
             db.SaveChanges();
             return RedirectToAction("Index");

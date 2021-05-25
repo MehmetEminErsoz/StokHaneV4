@@ -14,12 +14,17 @@ namespace StokHaneV4.Controllers
     
     public class TabHanesController : Controller
     {
-        private DB0345Entities db = new DB0345Entities();
+        private DB0345Entities1 db = new DB0345Entities1();
 
         // GET: TabHanes
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
             var tabHane = db.TabHane.Include(t => t.Tabisletme);
+            if (id!=null)
+            {
+                return View(tabHane.Where(s => s.Tabisletme.isletmeKod == id).ToList());
+            }
+            
             return View(tabHane.ToList());
         }
 

@@ -5,31 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>TabHane</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TavukhaneAdi)
-        </dt>
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Detaylar</h6></div>
+    <div class="card-body">
 
-        <dd>
-            @Html.DisplayFor(model => model.TavukhaneAdi)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tabisletme.isletmeKod)
-        </dt>
+        <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tabisletme.isletmeKod)
-        </dd>
+            <dl class="dl-horizontal">
+                <dt>
+                    Tavukhane Adı
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.TavukhaneAdi)
+                </dd>
+
+                <dt>
+                    İşletme Kod
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Tabisletme.isletmeKod)
+                </dd>
+                <dt>
+                    İşletme Adı
+                </dt>
+                <dd>
+                    @Html.DisplayFor(Model=>Model.Tabisletme.isletmeAdi)
+                </dd>
+
+                <dt>
+                    İşletme ID
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model=>model.Tabisletme.idisletme)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+          
+            <a href='@Url.Action("Edit","TabHanes",new { id = Model.idTavukhane })' class="btn btn-dark">Düzenle</a>
+            <a href='@Url.Action("Index","TabHanes")' class="btn btn-primary">İptal</a>
+        </p>
+
+
+    </div>
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idTavukhane }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

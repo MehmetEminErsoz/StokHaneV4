@@ -20,6 +20,7 @@ namespace StokHaneV4.Models
         public double miktar { get; set; }
         public int idmiktarcins { get; set; }
         public int idalsatkul { get; set; }
+        public Nullable<decimal> fiyat { get; set; }
     
         public virtual TabAlsatkul TabAlsatkul { get; set; }
         public virtual Tabirsaliye Tabirsaliye { get; set; }

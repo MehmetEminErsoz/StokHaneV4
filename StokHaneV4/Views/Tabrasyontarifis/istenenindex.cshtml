@@ -27,7 +27,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered " id="dataTable" align="center">
+                <table class="table table-bordered " id="dataTablesss" align="center">
 
                     <thead class="container">
                         <tr>
@@ -42,6 +42,7 @@
                     </thead>
 
                     <tbody>
+
                         @foreach (var item in Model)
                         {
                             <tr>
@@ -56,21 +57,40 @@
                                 </td>
 
 
-                                <td>
+                                <td class="text-md-right">
 
                                     <a href='@Url.Action("Edit","Tabrasyontarifis",new {id=item.idRasyonTarif})' class="btn btn-dark">Düzenle</a>
                                     <a href='@Url.Action("Delete","Tabrasyontarifis", new {id=item.idRasyonTarif})' class="btn btn-danger">Sil</a>
 
                                 </td>
                             </tr>
+
+                          
+
+
+
+
+
                         }
 
 
-                    </tbody>
-                </table>
 
-                <h6 >
-                    <a href='@Url.Action("Create","Tabrasyontarifis")' class="btn btn-success">Ürün Ekle</a>
+
+
+                    </tbody>
+                    </table>
+
+                <h6 class="text-md-right">
+                    <a href='@Url.Action("Index","TabRasyons")' class="btn btn-primary">Listeye Geri dön</a>
+
+                    @if (Model.FirstOrDefault() != null)
+                    {
+                        <a href='@Url.Action("Create","Tabrasyontarifis",new { id=Model.FirstOrDefault().idRasyon})' class="btn btn-success">Ürün Ekle</a>
+                    }
+                    else
+                    {
+                        <a href='@Url.Action("Create","Tabrasyontarifis")' class="btn btn-success">Ürün ekle</a>
+                    }
                 </h6>
                 
                 

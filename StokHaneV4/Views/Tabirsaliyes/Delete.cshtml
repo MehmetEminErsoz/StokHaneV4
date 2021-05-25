@@ -5,61 +5,65 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Tabirsaliye</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.irsaliyeKod)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.irsaliyeKod)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.girdiTarih)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.girdiTarih)
-        </dd>
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Anasayfa</h6></div>
+    <div class="card-body">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.firma)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.firma)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.firma2)
-        </dt>
+        <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.firma2)
-        </dd>
+            <dl class="dl-horizontal">
+                <dt>
+                    İrsaliye kod
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fiyat)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.irsaliyeKod)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fiyat)
-        </dd>
+                <dt>
+                    Tarih
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.girdiTarih)
+                </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                <dt>
+                    Firma-1
+                </dt>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                <dd>
+                    @Html.DisplayFor(model => model.firma)
+                </dd>
+
+                <dt>
+                   Firma-2
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.firma2)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Sil" class="btn btn-danger" /> 
+                    <a href='@Url.Action("Index","Tabirsaliyes")' class="btn btn-primary">İptal</a>
+                </div>
+            }
         </div>
-    }
+
+    </div>
+
+
 </div>

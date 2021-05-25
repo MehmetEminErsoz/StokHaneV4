@@ -5,54 +5,80 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.irsaliyeKod)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.girdiTarih)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.firma)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.firma2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fiyat)
-        </th>
-        <th></th>
-    </tr>
+<!-- Custom fonts for this template -->
+<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.irsaliyeKod)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.girdiTarih)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.firma)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.firma2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fiyat)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idirsaliye }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idirsaliye }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idirsaliye })
-        </td>
-    </tr>
-}
+<!-- Custom styles for this template -->
+<link href="~/css/sb-admin-2.min.css" rel="stylesheet">
 
-</table>
+<!-- Custom styles for this page -->
+<link href="~/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">İrsaliyeler</h6></div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered " id="dataTable" align="center">
+
+                <thead>
+                    <tr>
+                        <th>
+                            İrsaliye kod
+                        </th>
+                        <th>
+                            Girdi tarihi
+                        </th>
+                        <th>
+                            Firma-1
+                        </th>
+                        <th>
+                            Firma-2
+                        </th>
+                        <th class="text-md-right">
+                            <a href='@Url.Action("Create","Tabirsaliyes")' class="btn btn-success"> İrsaliye Ekle</a>
+
+                        </th>
+                    </tr>
+                </thead>
+
+
+
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a href="@Url.Action("Index","TabUrunGenels",new { id = item.idirsaliye })"
+                                   class="btn  alert-info">
+                                    @Html.DisplayFor(modelItem => item.irsaliyeKod)
+                                </a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.girdiTarih)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.firma)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.firma2)
+                            </td>
+                            <td class="text-md-right">
+                                <a href='@Url.Action("Delete", "Tabirsaliyes", new {id=item.idirsaliye})' class="btn btn-danger">Sil</a>
+                                <a href='@Url.Action("Edit", "Tabirsaliyes", new {id=item.idirsaliye})' class="btn btn-dark">Düzenle</a>
+                                
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>

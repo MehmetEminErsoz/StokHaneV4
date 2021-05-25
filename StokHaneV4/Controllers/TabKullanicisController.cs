@@ -15,7 +15,7 @@ namespace StokHaneV4.Controllers
     
     public class TabKullanicisController : Controller
     {
-        private DB0345Entities db = new DB0345Entities();
+        private DB0345Entities1 db = new DB0345Entities1();
 
         // GET: TabKullanicis
 

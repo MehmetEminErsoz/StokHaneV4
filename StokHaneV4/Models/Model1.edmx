@@ -39,7 +39,6 @@
           <Property Name="girdiTarih" Type="date" Nullable="false" />
           <Property Name="firma" Type="nvarchar" MaxLength="50" />
           <Property Name="firma2" Type="nvarchar" MaxLength="50" />
-          <Property Name="fiyat" Type="money" />
         </EntityType>
         <EntityType Name="Tabisletme">
           <Key>
@@ -115,6 +114,7 @@
           <Property Name="miktar" Type="float" Nullable="false" />
           <Property Name="idmiktarcins" Type="int" Nullable="false" />
           <Property Name="idalsatkul" Type="int" Nullable="false" />
+          <Property Name="fiyat" Type="money" />
         </EntityType>
         <EntityType Name="TabYetki">
           <Key>
@@ -372,7 +372,6 @@
           <Property Name="girdiTarih" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="firma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="firma2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fiyat" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="TabUrunGenel" Relationship="Self.FK_TabUrunGenel_Tabirsaliye" FromRole="Tabirsaliye" ToRole="TabUrunGenel" />
         </EntityType>
         <EntityType Name="Tabisletme">
@@ -464,6 +463,7 @@
           <Property Name="miktar" Type="Double" Nullable="false" />
           <Property Name="idmiktarcins" Type="Int32" Nullable="false" />
           <Property Name="idalsatkul" Type="Int32" Nullable="false" />
+          <Property Name="fiyat" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="TabAlsatkul" Relationship="Self.FK_TabUrunGenel_TabAlsatkul" FromRole="TabUrunGenel" ToRole="TabAlsatkul" />
           <NavigationProperty Name="Tabirsaliye" Relationship="Self.FK_TabUrunGenel_Tabirsaliye" FromRole="TabUrunGenel" ToRole="Tabirsaliye" />
           <NavigationProperty Name="TabmiktarCins" Relationship="Self.FK_TabUrunGenel_TabmiktarCins" FromRole="TabUrunGenel" ToRole="TabmiktarCins" />
@@ -621,7 +621,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DB0345Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB0345Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TabAlsatkul" EntityType="Self.TabAlsatkul" />
           <EntitySet Name="TabHane" EntityType="Self.TabHane" />
@@ -689,7 +689,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB0345ModelStoreContainer" CdmEntityContainer="DB0345Entities">
+        <EntityContainerMapping StorageEntityContainer="DB0345ModelStoreContainer" CdmEntityContainer="DB0345Entities1">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="DB0345Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -726,7 +726,6 @@
                 <ScalarProperty Name="girdiTarih" ColumnName="girdiTarih" />
                 <ScalarProperty Name="firma" ColumnName="firma" />
                 <ScalarProperty Name="firma2" ColumnName="firma2" />
-                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -810,6 +809,7 @@
                 <ScalarProperty Name="miktar" ColumnName="miktar" />
                 <ScalarProperty Name="idmiktarcins" ColumnName="idmiktarcins" />
                 <ScalarProperty Name="idalsatkul" ColumnName="idalsatkul" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

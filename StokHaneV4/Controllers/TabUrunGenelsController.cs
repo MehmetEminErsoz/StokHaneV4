@@ -12,12 +12,20 @@ namespace StokHaneV4.Controllers
 {
     public class TabUrunGenelsController : Controller
     {
-        private DB0345Entities db = new DB0345Entities();
+        private DB0345Entities1 db = new DB0345Entities1();
 
         // GET: TabUrunGenels
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var tabUrunGenel = db.TabUrunGenel.Include(t => t.TabAlsatkul).Include(t => t.Tabirsaliye).Include(t => t.TabmiktarCins).Include(t => t.Taburun);
+            if (id!=null)
+            {
+                tabUrunGenel.Where(s => s.idirsaliye == id).ToList();
+                return View(tabUrunGenel.Where(s => s.idirsaliye == id).ToList());
+            }
+            
+
+
             return View(tabUrunGenel.ToList());
         }
 
@@ -51,7 +59,7 @@ namespace StokHaneV4.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idurungenel,idUrun,idirsaliye,miktar,idmiktarcins,idalsatkul")] TabUrunGenel tabUrunGenel)
+        public ActionResult Create([Bind(Include = "idurungenel,idUrun,idirsaliye,miktar,idmiktarcins,idalsatkul,fiyat")] TabUrunGenel tabUrunGenel)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +99,7 @@ namespace StokHaneV4.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idurungenel,idUrun,idirsaliye,miktar,idmiktarcins,idalsatkul")] TabUrunGenel tabUrunGenel)
+        public ActionResult Edit([Bind(Include = "idurungenel,idUrun,idirsaliye,miktar,idmiktarcins,idalsatkul,fiyat")] TabUrunGenel tabUrunGenel)
         {
             if (ModelState.IsValid)
             {
@@ -127,6 +135,7 @@ namespace StokHaneV4.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             TabUrunGenel tabUrunGenel = db.TabUrunGenel.Find(id);
+            
             db.TabUrunGenel.Remove(tabUrunGenel);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -53,15 +53,24 @@
                                     <td>
                                         @item.list2.Taburun.UrunAdi
                                     </td>
-                                    <td>@item.list2.TarifMiktar</td>
-                                    
-                                    
+                                    <td>@item.list2.TarifMiktar.ToString().Replace(",", ".")</td>
+
+
                                 </tr>
 
                             }
                             else
                             {
-                                <tr>Ürün bulunmamakta</tr>
+                                <tr>
+
+                                    <td class="text-md-center"> Ürün bulunmamakta lütfen ürün ekleyiniz...</td>
+                                    <td class="text-md-right"><a href='@Url.Action("Create","Tabrasyontarifis",new { id=Model.idRasyon})' class="btn btn-danger">Ürün ekle</a></td>
+
+
+
+                                </tr>
+
+
                             }
 
                         }
@@ -69,8 +78,11 @@
 
                     </tbody>
                 </table>
-                <a href='@Url.Action("Index","TabRasyons")' class="btn btn-info">Listeye Geri dön</a>
-                <a href='@Url.Action("istenenindex","Tabrasyontarifis",new {id=Model.idRasyon})' class="btn btn-facebook">Rasyon içeriğini değiştir</a>
+                <div class="text-md-right">
+                    <a href='@Url.Action("Index","TabRasyons")' class="btn btn-info">Listeye Geri dön</a>
+                    <a href='@Url.Action("istenenindex","Tabrasyontarifis",new {id=Model.idRasyon})' class="btn btn-facebook">Rasyon içeriğini değiştir</a>
+
+                </div>
 
 
             </div>

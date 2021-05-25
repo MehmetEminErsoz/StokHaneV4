@@ -5,36 +5,52 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Tavukhane Sayfası</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TavukhaneAdi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tabisletme.isletmeKod)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TavukhaneAdi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tabisletme.isletmeKod)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idTavukhane }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idTavukhane }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idTavukhane })
-        </td>
-    </tr>
-}
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Tavukhaneler</h6></div>
+    <div class="card-body">
+        <div class="table-responsive">
 
-</table>
+            <table class="table">
+                <tr>
+
+                    <th>
+                        İşletme Kodu
+                    </th>
+                    <th>
+                        Tavukhane Adı
+                    </th>
+                    <th class="text-md-right">
+                        <a href='@Url.Action("Create","TabHanes")' class="btn btn-success">Yeni tavukhane ekle</a>
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tabisletme.isletmeKod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TavukhaneAdi)
+                </td>
+
+                <td class="text-md-right">
+
+                    <a href='@Url.Action("Delete","TabHanes",new {id=item.idTavukhane})' class="btn btn-danger">Sil</a>
+                    <a href='@Url.Action("Edit","TabHanes",new {id=item.idTavukhane})' class="btn btn-dark">Düzenle</a>
+                    <a href='@Url.Action("Details","TabHanes",new {id=item.idTavukhane})' class="btn btn-primary">Detaylar</a>
+                </td>
+            </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+
+
+</div>
+
+

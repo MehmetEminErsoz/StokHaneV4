@@ -5,55 +5,60 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Tabirsaliye</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.irsaliyeKod)
-        </dt>
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Detaylar</h6></div>
+    <div class="card-body">
 
-        <dd>
-            @Html.DisplayFor(model => model.irsaliyeKod)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.girdiTarih)
-        </dt>
+        <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.girdiTarih)
-        </dd>
+            <dl class="dl-horizontal">
+                <dt>
+                    İrsaliye kod
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.firma)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.irsaliyeKod)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.firma)
-        </dd>
+                <dt>
+                    Tarih
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.firma2)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.girdiTarih)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.firma2)
-        </dd>
+                <dt>
+                    Firma-1
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fiyat)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.firma)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fiyat)
-        </dd>
+                <dt>
+                    Firma-2
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.firma2)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+       
+
+            <a href='@Url.Action("Edit","Tabirsaliyes",new{ id = Model.idirsaliye })' class="btn btn-dark">Düzenle</a>
+            <a href='@Url.Action("Index","Tabirsaliyes")' class="btn btn-primary">Listeye dön</a>
+        </p>
+
+
+
+
+    </div>
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idirsaliye }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

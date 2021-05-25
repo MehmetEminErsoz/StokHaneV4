@@ -19,7 +19,7 @@ namespace StokHaneV4.Controllers
         {
             return View();
         }
-        private DB0345Entities db = new DB0345Entities();
+        private DB0345Entities1 db = new DB0345Entities1();
        
 
 

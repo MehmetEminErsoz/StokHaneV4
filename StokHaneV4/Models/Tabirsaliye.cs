@@ -25,7 +25,6 @@ namespace StokHaneV4.Models
         public System.DateTime girdiTarih { get; set; }
         public string firma { get; set; }
         public string firma2 { get; set; }
-        public Nullable<decimal> fiyat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TabUrunGenel> TabUrunGenel { get; set; }

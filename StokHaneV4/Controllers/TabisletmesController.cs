@@ -12,11 +12,12 @@ namespace StokHaneV4.Controllers
 {
     public class TabisletmesController : Controller
     {
-        private DB0345Entities db = new DB0345Entities();
+        private DB0345Entities1 db = new DB0345Entities1();
 
         // GET: Tabisletmes
         public ActionResult Index()
         {
+           
             return View(db.Tabisletme.ToList());
         }
 

@@ -6,19 +6,57 @@
 }
 
 
-
-
 <div class="card shadow mb-4 ">
-    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">İrsaliyeyi silmek istediğinizden emin misiniz ?</h6></div>
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-danger">Silmek istediğinize emin misiniz ?</h6></div>
     <div class="card-body">
 
 
-        
 
-        
+
+
         <div>
-            
+
             <dl class="dl-horizontal">
+                <dt>
+                    Miktar
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.miktar)
+                </dd>
+
+                <dt>
+                    Fiyat
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.fiyat)
+                </dd>
+
+                <dt>
+                    Alım-Satım-Kullanım
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabAlsatkul.alsatkultur)
+                </dd>
+
+                <dt>
+                    İrsaliye kod
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Tabirsaliye.irsaliyeKod)
+                </dd>
+
+                <dt>
+                    Miktar tür
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabmiktarCins.miktarturu)
+                </dd>
+
                 <dt>
                     Ürün Adı
                 </dt>
@@ -27,33 +65,22 @@
                     @Html.DisplayFor(model => model.Taburun.UrunAdi)
                 </dd>
                 <dt>
-                    Miktar
+                    Firma-1
                 </dt>
-
                 <dd>
-                    @Html.DisplayFor(model => model.miktar)
+                    @Html.DisplayFor(Model => Model.Tabirsaliye.firma)
                 </dd>
                 <dt>
-                    Cins
+                    Firma-2
                 </dt>
-
                 <dd>
-                    @Html.DisplayFor(model => model.TabmiktarCins.miktarturu)
+                    @Html.DisplayFor(Model => Model.Tabirsaliye.firma2)
                 </dd>
                 <dt>
-                    Olay
+                    Tarih
                 </dt>
-
                 <dd>
-                    @Html.DisplayFor(model => model.TabAlsatkul.alsatkultur)
-                </dd>
-
-                <dt>
-                    İrsaliye Kodu
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Tabirsaliye.irsaliyeKod)
+                    @Html.DisplayFor(Model => Model.Tabirsaliye.girdiTarih)
                 </dd>
 
 
@@ -66,14 +93,18 @@
             {
                 @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Sil" class="btn btn-danger" />
-            
-            <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">Listeye Dön</a>
-        </div>
+                <div class="form-actions no-color">
+                    <input type="submit" value="Sil" class="btn btn-danger" /> 
+                    <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">İptal</a>
+                </div>
             }
         </div>
+
+
+
     </div>
 
 
 </div>
+
+

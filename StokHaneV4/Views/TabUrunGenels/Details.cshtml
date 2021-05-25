@@ -5,55 +5,106 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>TabUrunGenel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.miktar)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.miktar)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TabAlsatkul.alsatkultur)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TabAlsatkul.alsatkultur)
-        </dd>
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Detaylar</h6></div>
+    <div class="card-body">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tabirsaliye.irsaliyeKod)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tabirsaliye.irsaliyeKod)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TabmiktarCins.miktarturu)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TabmiktarCins.miktarturu)
-        </dd>
+        <div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Taburun.UrunAdi)
-        </dt>
+            <dl class="dl-horizontal">
+                <dt>
+                    Miktar
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Taburun.UrunAdi)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.miktar)
+                </dd>
 
-    </dl>
+                <dt>
+                    Fiyat
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.fiyat)
+                </dd>
+
+                <dt>
+                    Alım-Satım-Kullanım
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabAlsatkul.alsatkultur)
+                </dd>
+
+                <dt>
+                    İrsaliye kod
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Tabirsaliye.irsaliyeKod)
+                </dd>
+
+                <dt>
+                    Miktar tür
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TabmiktarCins.miktarturu)
+                </dd>
+
+                <dt>
+                    Ürün Adı
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Taburun.UrunAdi)
+                </dd>
+                <dt>
+                    Firma-1
+                </dt>
+                <dd>
+                    @Html.DisplayFor(Model => Model.Tabirsaliye.firma)
+                </dd>
+                <dt>
+                    Firma-2
+                </dt>
+                <dd>
+                    @Html.DisplayFor(Model => Model.Tabirsaliye.firma2)
+                </dd>
+                <dt>
+                    Tarih
+                </dt>
+                <dd>
+                    @Html.DisplayFor(Model => Model.Tabirsaliye.girdiTarih)
+                </dd>
+
+
+
+
+
+            </dl>
+        </div>
+        <p>
+            
+
+
+           <a href=' @Url.Action("Edit","TabUrunGenels",new {id=Model.idurungenel})' class="btn btn-dark">Düzenle</a>
+            <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary"> Listeye geri dön</a>
+        </p>
+
+
+
+    </div>
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idurungenel }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+

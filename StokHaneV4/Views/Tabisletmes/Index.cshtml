@@ -5,36 +5,94 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.isletmeKod)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isletmeAdi)
-        </th>
-        <th></th>
-    </tr>
+<!-- Custom fonts for this template -->
+<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.isletmeKod)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isletmeAdi)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idisletme }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idisletme }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idisletme })
-        </td>
-    </tr>
-}
+<!-- Custom styles for this template -->
+<link href="~/css/sb-admin-2.min.css" rel="stylesheet">
 
-</table>
+<!-- Custom styles for this page -->
+<link href="~/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+
+
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">İşletmelerim</h6></div>
+    <div class="card-body">
+
+
+        <div class="table-responsive">
+
+
+
+            <table class="table table-bordered "  align="center">
+
+                <thead>
+                    <tr>
+                        <th>
+                            İşletme kod
+                        </th>
+                        <th>
+                            İşletme adı
+                        </th>
+                        <th class="text-md-right">
+                            <a href='@Url.Action("Create","Tabisletmes")' class="btn btn-success"> İşletme Ekle</a>
+                        </th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                               
+
+                                <a href='@Url.Action("Index", "TabHanes", new {id=item.isletmeKod})' class="btn alert-info"> @Html.DisplayFor(modelItem => item.isletmeKod)</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.isletmeAdi)
+                            </td>
+                            <td class="text-md-right">
+                                <a href='
+                                @Url.Action("Delete","Tabisletmes", new { id = item.idisletme })'
+                                   class="btn btn-danger">Sil</a>
+
+                                <a href='
+                                @Url.Action("Edit","Tabisletmes", new { id = item.idisletme })'
+                                   class="btn btn-dark">Düzenle</a>
+                                <a href='
+                                @Url.Action("Details","Tabisletmes", new { id = item.idisletme })'
+                                   class="btn btn-primary">Detaylar</a>
+
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</div>
