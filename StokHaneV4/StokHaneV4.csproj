@@ -127,10 +127,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StokController.cs" />
     <Compile Include="Controllers\TabHanesController.cs" />
     <Compile Include="Controllers\TabirsaliyesController.cs" />
     <Compile Include="Controllers\TabisletmesController.cs" />
     <Compile Include="Controllers\TabKullanicisController.cs" />
+    <Compile Include="Controllers\TabLogRasyonsController.cs" />
     <Compile Include="Controllers\TabRasyonsController.cs" />
     <Compile Include="Controllers\TabrasyontarifisController.cs" />
     <Compile Include="Controllers\TabUrunGenelsController.cs" />
@@ -153,9 +155,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabAlsatkul.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -2145,6 +2144,12 @@
     <Content Include="Views\Tabirsaliyes\Details.cshtml" />
     <Content Include="Views\Tabirsaliyes\Edit.cshtml" />
     <Content Include="Views\Tabirsaliyes\Index.cshtml" />
+    <Content Include="Views\TabLogRasyons\Create.cshtml" />
+    <Content Include="Views\TabLogRasyons\Delete.cshtml" />
+    <Content Include="Views\TabLogRasyons\Details.cshtml" />
+    <Content Include="Views\TabLogRasyons\Edit.cshtml" />
+    <Content Include="Views\TabLogRasyons\Index.cshtml" />
+    <Content Include="Views\Stok\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

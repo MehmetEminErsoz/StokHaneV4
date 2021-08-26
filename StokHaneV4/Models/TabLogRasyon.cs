@@ -16,7 +16,6 @@ namespace StokHaneV4.Models
     {
         public int idislem { get; set; }
         public int idRasyon { get; set; }
-        public int idRasyonTarif { get; set; }
         public int İdHane { get; set; }
         public int idKullanici { get; set; }
         public System.DateTime islemTarihi { get; set; }
@@ -24,6 +23,5 @@ namespace StokHaneV4.Models
         public virtual TabHane TabHane { get; set; }
         public virtual TabKullanici TabKullanici { get; set; }
         public virtual TabRasyon TabRasyon { get; set; }
-        public virtual Tabrasyontarifi Tabrasyontarifi { get; set; }
     }
 }

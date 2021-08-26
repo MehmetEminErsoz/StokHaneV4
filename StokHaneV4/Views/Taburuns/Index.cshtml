@@ -26,7 +26,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.UrunAdi)
+                        <a href='@Url.Action("Index","Stok",new {kod=item.stokKod })' class="btn btn-info">@Html.DisplayFor(modelItem => item.UrunAdi)</a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.stokKod)

@@ -19,68 +19,107 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
+        <div class="form-horizontal">
 
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => model.idurungenel)
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.idurungenel)
 
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Ürün</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idUrun", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idUrun, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">İrsaliye kod</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idirsaliye", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idirsaliye, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Miktar</h6>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.miktar, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.miktar, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Miktar cins</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idmiktarcins", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idmiktarcins, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Alım-satım-kullanım</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idalsatkul", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idalsatkul, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Fiyat</h6>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.fiyat, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.fiyat, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Kaydet" class="btn btn-success" />
-                        
-                        <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">Listeye Dön</a>
-                           
-                           </div>
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Ürün</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idUrun", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idUrun, "", new { @class = "text-danger" })
                 </div>
             </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">İrsaliye kod</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idirsaliye", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idirsaliye, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Miktar</h6>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.miktar, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.miktar, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Miktar cins</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idmiktarcins", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idmiktarcins, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Alım-satım-kullanım</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idalsatkul", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idalsatkul, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Fiyat</h6>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fiyat, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fiyat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">İşlem Yapan kullanıcı</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idkullanici", null, htmlAttributes: new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(model => model.idkullanici, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Aktiflik durumu</h6>
+                <div class="col-md-10">
+
+                    @if (Model.Aktiflik == true)
+                    {
+                        
+                    <p>
+                        @Html.CheckBox("CB1", isChecked: true)
+                        Aktif
+                    </p>
+                    }
+                    else
+                    {
+                <p>@Html.CheckBox("CB1", isChecked: false) Pasif</p>
+                        
+                    }
+
+
+
+                </div>
+            </div>
+
+
+
+
+            
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Kaydet" class="btn btn-success" />
+
+                    <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">Listeye Dön</a>
+
+                </div>
+            </div>
+        </div>
         }
 
         <div>

@@ -91,7 +91,7 @@
 
                         <a class="collapse-item" href="~/TabUrunGenels/Index">Ürün genel sayfası</a>
                         <a class="collapse-item" href="~/Taburuns/Index">Ürün listesi</a>
-                        <a class="collapse-item" href="#">#Stok Durumu</a>
+                        <a class="collapse-item" href="~/Stok/Index">Stok Durumu</a>
 
                     </div>
                 </div>
@@ -147,7 +147,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Log:</h6>
                         <a class="collapse-item" href="#">#Log</a>
-                        
+                        <a class="collapse-item" href="~/TabLogRasyons/Index">Log</a>
+
                     </div>
                 </div>
             </li>
@@ -245,13 +246,13 @@
                         <!-- Dropdown - Messages -->
 
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                        @*<div class="topbar-divider d-none d-sm-block"></div>*@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@HttpContext.Current.User.Identity.Name</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> @HttpContext.Current.User.Identity.Name</span>
                                 <img class="img-profile rounded-circle"
                                      src="~/img/undraw_profile.svg">
                             </a>
