@@ -13,10 +13,10 @@ namespace StokHaneV4.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DB0345Entities1 : DbContext
+    public partial class DB0345ENTWB : DbContext
     {
-        public DB0345Entities1()
-            : base("name=DB0345Entities1")
+        public DB0345ENTWB()
+            : base("name=DB0345ENTWB")
         {
         }
     
@@ -25,7 +25,6 @@ namespace StokHaneV4.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TabAlsatkul> TabAlsatkul { get; set; }
         public virtual DbSet<TabHane> TabHane { get; set; }
         public virtual DbSet<Tabirsaliye> Tabirsaliye { get; set; }

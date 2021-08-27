@@ -16,64 +16,68 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-horizontal">
-                
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Ürün seçiniz...</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idUrun", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idUrun, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+        <div class="form-horizontal">
 
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">İrsaliye seçiniz...</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idirsaliye", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idirsaliye, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Miktar</h6>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.miktar, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.miktar, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Miktar cins seçiniz...</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idmiktarcins", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idmiktarcins, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Alım-satım-kullanım</h6>
-                    <div class="col-md-10">
-                        @Html.DropDownList("idalsatkul", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.idalsatkul, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <h6 class="control-label col-md-10">Fiyat</h6>
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.fiyat, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.fiyat, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Oluştur" class="btn btn-success" />
-                        <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">İptal</a>
-                    </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Ürün seçiniz...</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idUrun", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idUrun, "", new { @class = "text-danger" })
                 </div>
             </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">İrsaliye seçiniz...</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idirsaliye", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idirsaliye, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Miktar</h6>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.miktar, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.miktar, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Miktar cins seçiniz...</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idmiktarcins", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idmiktarcins, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Alım-satım-kullanım</h6>
+                <div class="col-md-10">
+                    @Html.DropDownList("idalsatkul", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idalsatkul, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="control-label col-md-10">Fiyat</h6>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fiyat, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fiyat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            @Html.TextBoxFor(m => m.idkullanici, new {@Hidden =true, htmlAttributes = new { @class = "form-control" } })
+            @Html.TextBoxFor(m => m.Aktiflik, new { @Value = "True", @Hidden = true, htmlAttributes = new { @class = "form-control" } })
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Oluştur" class="btn btn-success" />
+                    <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">İptal</a>
+                </div>
+            </div>
+        </div>
         }
 
         

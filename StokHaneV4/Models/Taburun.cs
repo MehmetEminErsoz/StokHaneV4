@@ -24,6 +24,7 @@ namespace StokHaneV4.Models
         public int idurun { get; set; }
         public string UrunAdi { get; set; }
         public string stokKod { get; set; }
+        public Nullable<bool> Aktiflik { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tabrasyontarifi> Tabrasyontarifi { get; set; }

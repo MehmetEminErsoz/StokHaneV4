@@ -18,6 +18,9 @@ namespace StokHaneV4.Models
         public TabKullanici()
         {
             this.TabLogRasyon = new HashSet<TabLogRasyon>();
+            this.TabRasyon = new HashSet<TabRasyon>();
+            this.TabUrunGenel = new HashSet<TabUrunGenel>();
+            this.TabUrunGenel1 = new HashSet<TabUrunGenel>();
         }
     
         public int idKullanici { get; set; }
@@ -33,5 +36,11 @@ namespace StokHaneV4.Models
         public virtual TabYetki TabYetki { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TabLogRasyon> TabLogRasyon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TabRasyon> TabRasyon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TabUrunGenel> TabUrunGenel { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TabUrunGenel> TabUrunGenel1 { get; set; }
     }
 }

@@ -17,9 +17,11 @@ namespace StokHaneV4.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+
+           
             return View();
         }
-        private DB0345Entities1 db = new DB0345Entities1();
+        private DB0345ENTWB db = new DB0345ENTWB();
        
 
 
@@ -53,14 +55,21 @@ namespace StokHaneV4.Controllers
 
             return View();
         }
+
+        public StokHaneV4.Models.TabKullanici bilgiler;
         [HttpPost]
         [AllowAnonymous]
+        
         public ActionResult login(TabKullanici t)
         {
-            var bilgiler = db.TabKullanici.FirstOrDefault(x => x.eposta == t.eposta && x.kulsif == t.kulsif);
-                if (bilgiler !=null)
-                {
-                FormsAuthentication.SetAuthCookie(bilgiler.eposta, false);
+            bilgiler = db.TabKullanici.FirstOrDefault(x => x.eposta == t.eposta && x.kulsif == t.kulsif);
+
+            if (bilgiler != null)
+            {
+                Session["id"] = bilgiler.idKullanici;
+                Session.Add("asdf", bilgiler.eposta);
+                FormsAuthentication.SetAuthCookie(bilgiler.kulisim +" "+bilgiler.kulsoyisim, false);
+
                 return RedirectToAction("Index","Home");
                 }
             else
@@ -81,5 +90,8 @@ namespace StokHaneV4.Controllers
 
             return RedirectToAction("login");
         }
+
+        
+       
     }
 }

@@ -84,6 +84,22 @@
                 <dd>
                     @Html.DisplayFor(Model => Model.Tabirsaliye.girdiTarih)
                 </dd>
+                <dt>
+
+                    İşlem Yapan kullanıcı
+                </dt>
+                <dl>
+                    @Html.DisplayFor(x=>x.TabKullanici.kulisim)
+
+                    @Html.DisplayFor(x=>x.TabKullanici.kulsoyisim)
+                </dl>
+
+                <dt>
+                    ürün aktifliği
+                </dt>
+                <dd>
+                    @Html.DisplayFor(y=>y.Aktiflik)
+                </dd>
 
 
 

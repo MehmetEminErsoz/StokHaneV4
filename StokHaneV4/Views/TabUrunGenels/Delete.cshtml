@@ -83,8 +83,19 @@
                     @Html.DisplayFor(Model => Model.Tabirsaliye.girdiTarih)
                 </dd>
 
+                <dt>
+                    İşlem yapan kullanıcı
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.TabKullanici.kulisim)
 
-
+                    @Html.DisplayFor(x => x.TabKullanici.kulsoyisim)
+                </dd>
+                <dt>Aktiflik</dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Aktiflik)
+                    
+                </dd>
 
 
             </dl>
@@ -94,6 +105,7 @@
                 @Html.AntiForgeryToken()
 
                 <div class="form-actions no-color">
+                   
                     <input type="submit" value="Sil" class="btn btn-danger" /> 
                     <a href='@Url.Action("Index","TabUrunGenels")' class="btn btn-primary">İptal</a>
                 </div>

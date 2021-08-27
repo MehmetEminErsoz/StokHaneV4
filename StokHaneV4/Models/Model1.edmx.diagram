@@ -4,32 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="abf1ad30ac5940afa22c596731582bee" Name="Diagram1">
-        <EntityTypeShape EntityType="DB0345Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabAlsatkul" Width="1.5" PointX="3.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabHane" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.Tabirsaliye" Width="1.5" PointX="3.75" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.Tabisletme" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabKullanici" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabLogRasyon" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabmiktarCins" Width="1.5" PointX="3.75" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabRasyon" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.Tabrasyontarifi" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.Taburun" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabUrunGenel" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB0345Model.TabYetki" Width="1.5" PointX="3.75" PointY="9.25" IsExpanded="true" />
-        <AssociationConnector Association="DB0345Model.FK_TabUrunGenel_TabAlsatkul" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabHane_Tabisletme" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabLogRasyon_TabHane" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabUrunGenel_Tabirsaliye" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabKullanici_TabYetki" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabLogRasyon_TabKullanici" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabLogRasyon_TabRasyon" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabLogRasyon_Tabrasyontarifi" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabUrunGenel_TabmiktarCins" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_Tabrasyontarifi_TabRasyon" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_Tabrasyontarifi_Taburun" ManuallyRouted="false" />
-        <AssociationConnector Association="DB0345Model.FK_TabUrunGenel_Taburun" ManuallyRouted="false" />
+      <Diagram DiagramId="83d3efdc71054958b4e7d2a048baedff" Name="Diagram1">
+        <EntityTypeShape EntityType="DB0345WBModel.TabAlsatkul" Width="1.5" PointX="3.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabHane" Width="1.5" PointX="8" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Tabirsaliye" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Tabisletme" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabKullanici" Width="1.5" PointX="1.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabLogRasyon" Width="1.5" PointX="10.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabmiktarCins" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabRasyon" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Tabrasyontarifi" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Taburun" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabUrunGenel" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabYetki" Width="1.5" PointX="1.5" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabAlsatkul" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabHane_Tabisletme" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabLogRasyon_TabHane" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_Tabirsaliye" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabKullanici_TabYetki" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabLogRasyon_TabKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabRasyon_TabKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabKullanici1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabLogRasyon_TabRasyon" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabmiktarCins" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_Tabrasyontarifi_TabRasyon" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_Tabrasyontarifi_Taburun" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_Taburun" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

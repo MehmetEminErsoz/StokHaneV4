@@ -14,19 +14,11 @@ namespace StokHaneV4.Models
     
     public partial class Tabrasyontarifi
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tabrasyontarifi()
-        {
-            this.TabLogRasyon = new HashSet<TabLogRasyon>();
-        }
-    
         public int idRasyonTarif { get; set; }
         public int idRasyon { get; set; }
         public double TarifMiktar { get; set; }
         public int idUrun { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TabLogRasyon> TabLogRasyon { get; set; }
         public virtual TabRasyon TabRasyon { get; set; }
         public virtual Taburun Taburun { get; set; }
     }

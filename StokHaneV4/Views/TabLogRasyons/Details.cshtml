@@ -1,0 +1,61 @@
+﻿@model StokHaneV4.Models.TabLogRasyon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>TabLogRasyon</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.islemTarihi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.islemTarihi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TabHane.TavukhaneAdi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TabHane.TavukhaneAdi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TabKullanici.KulAdi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TabKullanici.KulAdi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TabRasyon.RasyonAdi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TabRasyon.RasyonAdi)
+            </dd>
+    
+            
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.idislem }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

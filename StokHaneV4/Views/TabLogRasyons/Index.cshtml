@@ -1,0 +1,65 @@
+﻿@model IEnumerable<StokHaneV4.Models.TabLogRasyon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.islemTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TabHane.TavukhaneAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TabKullanici.KulAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TabRasyon.RasyonAdi)
+            </th>
+           
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.islemTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TabHane.TavukhaneAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TabKullanici.KulAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TabRasyon.RasyonAdi)
+            </td>
+            <td>
+                
+               
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.idislem }) |
+                @Html.ActionLink("Details", "Details", new { id=item.idislem }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.idislem })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

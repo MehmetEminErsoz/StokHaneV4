@@ -23,7 +23,10 @@ namespace StokHaneV4.Models
     
         public int idRasyon { get; set; }
         public string RasyonAdi { get; set; }
+        public Nullable<bool> Aktiflik { get; set; }
+        public Nullable<int> idkullanici { get; set; }
     
+        public virtual TabKullanici TabKullanici { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TabLogRasyon> TabLogRasyon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
