@@ -13,7 +13,7 @@ namespace StokHaneV4.Controllers
     public class TabUrunGenelsController : Controller
          
     {
-        private DB0345ENTWB db = new DB0345ENTWB();
+        private DB0345WBEnt db = new DB0345WBEnt();
         
         // GET: TabUrunGenels
         public ActionResult Index(string kod,int? id)

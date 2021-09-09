@@ -16,7 +16,7 @@ namespace StokHaneV4.Controllers
 
     public class TabrasyontarifisController : Controller
     {
-        private DB0345ENTWB db = new DB0345ENTWB();
+        private DB0345WBEnt db = new DB0345WBEnt();
 
         // GET: Tabrasyontarifis
         

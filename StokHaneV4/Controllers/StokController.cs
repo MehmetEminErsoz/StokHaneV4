@@ -14,7 +14,7 @@ namespace StokHaneV4.Controllers
     {
         // GET: Stok
 
-        private DB0345ENTWB db = new DB0345ENTWB();
+        private DB0345WBEnt db = new DB0345WBEnt();
         public ActionResult Index(string kod,int? id)
         {
             var stoktablo = db.TabUrunGenel.Include(s => s.TabAlsatkul).Include(s => s.Tabirsaliye).Include(s => s.TabmiktarCins).Include(s => s.Taburun).Include(s => s.TabKullanici);

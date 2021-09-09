@@ -140,57 +140,66 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdoNetEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdoNetEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdoNetEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdoNetEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Class1.cs" />
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabAlsatkul.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabHane.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabirsaliye.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabisletme.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabKullanici.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabLogRasyon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabmiktarCins.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabRasyon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabrasyontarifi.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Taburun.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabUrunGenel.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabYetki.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>AdoNetEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -217,24 +226,25 @@
     <Content Include="js\demo\datatables-demo.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\AdoNetEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
+      <LastGenOutput>AdoNetEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\AdoNetEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
+      <LastGenOutput>AdoNetEntity.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Model1.edmx.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\AdoNetEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>AdoNetEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\AdoNetEntity.edmx.diagram">
+      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2203,6 +2213,13 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+    <ItemGroup>
+      <RoslynFiles Include="$(CscToolPath)\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

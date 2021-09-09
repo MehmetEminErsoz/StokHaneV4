@@ -21,7 +21,7 @@ namespace StokHaneV4.Controllers
            
             return View();
         }
-        private DB0345ENTWB db = new DB0345ENTWB();
+        private DB0345WBEnt db = new DB0345WBEnt();
        
 
 
