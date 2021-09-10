@@ -17,6 +17,9 @@ namespace StokHaneV4.Controllers
         // GET: Taburuns
         public ActionResult Index()
         {
+
+            
+            
             return View(db.Taburun.ToList());
         }
 

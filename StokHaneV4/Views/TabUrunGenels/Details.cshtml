@@ -28,6 +28,13 @@
                 </dd>
 
                 <dt>
+                    Kalan Miktar
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.miktarKalan)
+                </dd>
+                <dt>
                     Fiyat
                 </dt>
 
@@ -89,16 +96,16 @@
                     İşlem Yapan kullanıcı
                 </dt>
                 <dl>
-                    @Html.DisplayFor(x=>x.TabKullanici.kulisim)
+                    @Html.DisplayFor(x => x.TabKullanici.kulisim)
 
-                    @Html.DisplayFor(x=>x.TabKullanici.kulsoyisim)
+                    @Html.DisplayFor(x => x.TabKullanici.kulsoyisim)
                 </dl>
 
                 <dt>
                     ürün aktifliği
                 </dt>
                 <dd>
-                    @Html.DisplayFor(y=>y.Aktiflik)
+                    @Html.DisplayFor(y => y.Aktiflik)
                 </dd>
 
 

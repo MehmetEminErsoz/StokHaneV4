@@ -49,6 +49,14 @@
             </div>
 
             <div class="form-group">
+                <h6 class="control-label col-md-10">Miktar Kalan</h6>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.miktarKalan, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.miktarKalan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
                 <h6 class="control-label col-md-10">Miktar cins</h6>
                 <div class="col-md-10">
                     @Html.DropDownList("idmiktarcins", null, htmlAttributes: new { @class = "form-control" })
@@ -90,16 +98,16 @@
 
                     @if (Model.Aktiflik == true)
                     {
-                        
-                    <p>
-                        @Html.CheckBox("CB1", isChecked: true)
-                        Aktif
-                    </p>
+
+                        <p>
+                            @Html.CheckBox("CB1", isChecked: true)
+                            Aktif
+                        </p>
                     }
                     else
                     {
-                <p>@Html.CheckBox("CB1", isChecked: false) Pasif</p>
-                        
+                        <p>@Html.CheckBox("CB1", isChecked: false) Pasif</p>
+
                     }
 
 
@@ -110,7 +118,7 @@
 
 
 
-            
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Kaydet" class="btn btn-success" />

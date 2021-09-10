@@ -20,6 +20,7 @@
 
                         <th>Ürün adı</th>
                         <th>Miktar</th>
+                        <th>Kalan Miktar</th>
                         <th>Miktar cins</th>
                         <th>Fiyat</th>
                         <th>Alım-satım-kullanım</th>
@@ -35,52 +36,57 @@
 
                     @foreach (var item in Model)
                     {
-                        <tr>
+                    <tr>
 
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Taburun.UrunAdi)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.miktar)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TabmiktarCins.miktarturu)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.fiyat)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TabAlsatkul.alsatkultur)
-                            </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Taburun.UrunAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.miktar)
+                        </td>
 
+                        <td>
+                            @Html.DisplayFor(modelItem => item.miktarKalan)
+                        </td>
 
-
-                            <td>
-                                @Html.DisplayFor(modelitem=>item.Tabirsaliye.girdiTarih)
-                            </td>
-                            <td>
-
-                                @Html.DisplayFor(modelItem => item.Tabirsaliye.irsaliyeKod)
-
-                            </td>
-
-                            <td>
-                                @Html.DisplayFor(modelitem => item.TabKullanici.kulisim)
-                                @Html.DisplayFor(modelitem => item.TabKullanici.kulsoyisim)
-                            </td>
-
-                            @*<td>
-                                    @Html.DisplayFor(modelitem=>item.Aktiflik.Value)
-                                </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TabmiktarCins.miktarturu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fiyat)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TabAlsatkul.alsatkultur)
+                        </td>
 
 
-                            <td class="text-md-right">
-                                <a href=' @Url.Action("Delete","TabUrunGenels",new {id=item.idurungenel})' class="btn btn-danger">Sil</a>
-                                <a href=' @Url.Action("Edit","TabUrunGenels",new {id=item.idurungenel})' class="btn btn-dark">Düzenle</a>
-                                <a href=' @Url.Action("Details","TabUrunGenels",new {id=item.idurungenel})' class="btn btn-info">Detaylar</a>
 
-                            </td>
-                        </tr>
+                        <td>
+                            @Html.DisplayFor(modelitem => item.Tabirsaliye.girdiTarih)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.Tabirsaliye.irsaliyeKod)
+
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelitem => item.TabKullanici.kulisim)
+                            @Html.DisplayFor(modelitem => item.TabKullanici.kulsoyisim)
+                        </td>
+
+                        @*<td>
+            @Html.DisplayFor(modelitem=>item.Aktiflik.Value)
+        </td>*@
+
+
+                        <td class="text-md-right">
+                            <a href=' @Url.Action("Delete","TabUrunGenels",new {id=item.idurungenel})' class="btn btn-danger">Sil</a>
+                            <a href=' @Url.Action("Edit","TabUrunGenels",new {id=item.idurungenel})' class="btn btn-dark">Düzenle</a>
+                            <a href=' @Url.Action("Details","TabUrunGenels",new {id=item.idurungenel})' class="btn btn-info">Detaylar</a>
+
+                        </td>
+                    </tr>
                     }
 
 

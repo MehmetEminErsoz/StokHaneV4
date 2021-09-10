@@ -20,7 +20,8 @@ namespace StokHaneV4.Controllers
         {
             var tabUrunGenel = db.TabUrunGenel.Include(t => t.TabAlsatkul).Include(t => t.Tabirsaliye).Include(t => t.TabmiktarCins).Include(t => t.Taburun).Include(t=>t.TabKullanici1);
 
-          
+            
+
             if (id!=null)
             {
                
@@ -68,12 +69,14 @@ namespace StokHaneV4.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idurungenel,idUrun,idirsaliye,miktar,idmiktarcins,idalsatkul,fiyat,eposta,idKullanici,Aktiflik")] TabUrunGenel tabUrunGenel)
+        public ActionResult Create([Bind(Include = "idurungenel,idUrun,idirsaliye,miktarKalan,miktar,idmiktarcins,idalsatkul,fiyat,eposta,idKullanici,Aktiflik")] TabUrunGenel tabUrunGenel)
         {
-
+            
             int kulid = Convert.ToInt32(Session["id"]);
             if (ModelState.IsValid)
             {
+                
+                tabUrunGenel.miktarKalan = tabUrunGenel.miktar;
                 tabUrunGenel.idkullanici = kulid;
                 db.TabUrunGenel.Add(tabUrunGenel);
 
@@ -120,7 +123,7 @@ namespace StokHaneV4.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         
-        public ActionResult Edit([Bind(Include = "idurungenel,idUrun,idirsaliye,miktar,idmiktarcins,idalsatkul,fiyat,eposta,idKullanici,kulisim,kulsoyisim,Aktiflik")] TabUrunGenel tabUrunGenel,bool CB1)
+        public ActionResult Edit([Bind(Include = "idurungenel,idUrun,idirsaliye,miktarKalan,miktar,idmiktarcins,idalsatkul,fiyat,eposta,idKullanici,kulisim,kulsoyisim,Aktiflik")] TabUrunGenel tabUrunGenel,bool CB1)
         {
 
 
