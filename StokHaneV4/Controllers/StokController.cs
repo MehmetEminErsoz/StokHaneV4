@@ -65,6 +65,7 @@ namespace StokHaneV4.Controllers
                     throw new Exception("Stokta yeterli ürün yok");
 
                 double? kullanilanMiktar = 0;
+                double? genelkullanılanmiktar = 0;
                 var i = 0;
                 double? eksikkalan = 0;
                 var stoktanDusecekler = new List<TabUrunGenel>();
@@ -73,18 +74,32 @@ namespace StokHaneV4.Controllers
                     if ((rasyontarif.TarifMiktar - kullanilanMiktar) > stoktablo[i].miktarKalan)
                     {
                         kullanilanMiktar = stoktablo[i].miktarKalan;
-
-                        //stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - kullanilanMiktar;
+                        
+                        stoktablo[i].miktarKalan = stoktablo[i].miktarKalan -kullanilanMiktar;
                     }
                     else 
                     {
-                        stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - rasyontarif.TarifMiktar;
 
+                        if (kullanilanMiktar>0)
+                        {
+                            stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - eksikkalan;
+
+
+                            kullanilanMiktar += eksikkalan;
+                            
+                        }
+                        else
+                        {
+                            kullanilanMiktar = rasyontarif.TarifMiktar;
+                            stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - kullanilanMiktar;
+                            
+                        }
                         
-                        kullanilanMiktar = kullanilanMiktar + eksikkalan;
+
                     }
-                    
+                    //kullanilanMiktar = kullanilanMiktar + eksikkalan;
                     eksikkalan = rasyontarif.TarifMiktar - kullanilanMiktar;
+                   
                     stoktanDusecekler.Add(stoktablo[i]);
                     db.SaveChanges();
                     //kullanilanMiktar += stoktablo[i].miktarKalan;
