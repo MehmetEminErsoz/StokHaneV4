@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB0345WBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DB0345WBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -297,38 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="DB0345WBModel1StoreContainer">
+        <EntityContainer Name="DB0345WBModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TabAlsatkul" EntityType="Self.TabAlsatkul" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TabHane" EntityType="Self.TabHane" Schema="dbo" store:Type="Tables" />
@@ -403,7 +372,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DB0345WBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DB0345WBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -724,7 +693,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DB0345WBEnt" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB0345WBEntt" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TabAlsatkul" EntityType="Self.TabAlsatkul" />
           <EntitySet Name="TabHane" EntityType="Self.TabHane" />
@@ -794,56 +763,15 @@
             <End Role="Taburun" EntitySet="Taburun" />
             <End Role="TabUrunGenel" EntitySet="TabUrunGenel" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DB0345WBModel1.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DB0345WBModel1.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB0345WBModel1StoreContainer" CdmEntityContainer="DB0345WBEnt">
+        <EntityContainerMapping StorageEntityContainer="DB0345WBModelStoreContainer" CdmEntityContainer="DB0345WBEntt">
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DB0345WBModel1.sysdiagrams">
+            <EntityTypeMapping TypeName="DB0345WBModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -854,7 +782,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabAlsatkul">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabAlsatkul">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabAlsatkul">
               <MappingFragment StoreEntitySet="TabAlsatkul">
                 <ScalarProperty Name="idalsatkul" ColumnName="idalsatkul" />
                 <ScalarProperty Name="alsatkultur" ColumnName="alsatkultur" />
@@ -862,7 +790,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabHane">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabHane">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabHane">
               <MappingFragment StoreEntitySet="TabHane">
                 <ScalarProperty Name="idTavukhane" ColumnName="idTavukhane" />
                 <ScalarProperty Name="idisletme" ColumnName="idisletme" />
@@ -871,7 +799,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tabirsaliye">
-            <EntityTypeMapping TypeName="DB0345WBModel1.Tabirsaliye">
+            <EntityTypeMapping TypeName="DB0345WBModel.Tabirsaliye">
               <MappingFragment StoreEntitySet="Tabirsaliye">
                 <ScalarProperty Name="idirsaliye" ColumnName="idirsaliye" />
                 <ScalarProperty Name="irsaliyeKod" ColumnName="irsaliyeKod" />
@@ -883,7 +811,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tabisletme">
-            <EntityTypeMapping TypeName="DB0345WBModel1.Tabisletme">
+            <EntityTypeMapping TypeName="DB0345WBModel.Tabisletme">
               <MappingFragment StoreEntitySet="Tabisletme">
                 <ScalarProperty Name="idisletme" ColumnName="idisletme" />
                 <ScalarProperty Name="isletmeKod" ColumnName="isletmeKod" />
@@ -892,7 +820,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabKullanici">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabKullanici">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabKullanici">
               <MappingFragment StoreEntitySet="TabKullanici">
                 <ScalarProperty Name="idKullanici" ColumnName="idKullanici" />
                 <ScalarProperty Name="KulAdi" ColumnName="KulAdi" />
@@ -907,7 +835,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabLogRasyon">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabLogRasyon">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabLogRasyon">
               <MappingFragment StoreEntitySet="TabLogRasyon">
                 <ScalarProperty Name="idislem" ColumnName="idislem" />
                 <ScalarProperty Name="idRasyon" ColumnName="idRasyon" />
@@ -918,7 +846,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabmiktarCins">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabmiktarCins">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabmiktarCins">
               <MappingFragment StoreEntitySet="TabmiktarCins">
                 <ScalarProperty Name="idmiktarcins" ColumnName="idmiktarcins" />
                 <ScalarProperty Name="miktarturu" ColumnName="miktarturu" />
@@ -926,7 +854,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabRasyon">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabRasyon">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabRasyon">
               <MappingFragment StoreEntitySet="TabRasyon">
                 <ScalarProperty Name="idRasyon" ColumnName="idRasyon" />
                 <ScalarProperty Name="RasyonAdi" ColumnName="RasyonAdi" />
@@ -936,7 +864,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tabrasyontarifi">
-            <EntityTypeMapping TypeName="DB0345WBModel1.Tabrasyontarifi">
+            <EntityTypeMapping TypeName="DB0345WBModel.Tabrasyontarifi">
               <MappingFragment StoreEntitySet="Tabrasyontarifi">
                 <ScalarProperty Name="idRasyonTarif" ColumnName="idRasyonTarif" />
                 <ScalarProperty Name="idRasyon" ColumnName="idRasyon" />
@@ -946,7 +874,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Taburun">
-            <EntityTypeMapping TypeName="DB0345WBModel1.Taburun">
+            <EntityTypeMapping TypeName="DB0345WBModel.Taburun">
               <MappingFragment StoreEntitySet="Taburun">
                 <ScalarProperty Name="idurun" ColumnName="idurun" />
                 <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
@@ -956,7 +884,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabUrunGenel">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabUrunGenel">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabUrunGenel">
               <MappingFragment StoreEntitySet="TabUrunGenel">
                 <ScalarProperty Name="idurungenel" ColumnName="idurungenel" />
                 <ScalarProperty Name="idUrun" ColumnName="idUrun" />
@@ -972,37 +900,13 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TabYetki">
-            <EntityTypeMapping TypeName="DB0345WBModel1.TabYetki">
+            <EntityTypeMapping TypeName="DB0345WBModel.TabYetki">
               <MappingFragment StoreEntitySet="TabYetki">
                 <ScalarProperty Name="idYetki" ColumnName="idYetki" />
                 <ScalarProperty Name="Yetkiadi" ColumnName="Yetkiadi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DB0345WBModel1.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DB0345WBModel1.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DB0345WBModel1.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DB0345WBModel1.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DB0345WBModel1.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DB0345WBModel1.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DB0345WBModel1.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DB0345WBModel1.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DB0345WBModel1.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

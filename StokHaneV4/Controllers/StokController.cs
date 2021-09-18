@@ -14,7 +14,7 @@ namespace StokHaneV4.Controllers
     {
         // GET: Stok
 
-        private DB0345WBEnt db = new DB0345WBEnt();
+        private DB0345WBEntt db = new DB0345WBEntt();
         public ActionResult Index(string kod,int? id)
         {
             var stoktablo = db.TabUrunGenel.Include(s => s.TabAlsatkul).Include(s => s.Tabirsaliye).Include(s => s.TabmiktarCins).Include(s => s.Taburun).Include(s => s.TabKullanici);
@@ -66,24 +66,28 @@ namespace StokHaneV4.Controllers
 
                 double? kullanilanMiktar = 0;
                 var i = 0;
+                double? eksikkalan = 0;
                 var stoktanDusecekler = new List<TabUrunGenel>();
-                while (kullanilanMiktar < rasyontarif.TarifMiktar)
+                while (kullanilanMiktar< rasyontarif.TarifMiktar)
                 {
-                    double? eklenecek = 0;
-                    if ((kullanilanMiktar + stoktablo[i].miktarKalan) > rasyontarif.TarifMiktar)
+                    if ((rasyontarif.TarifMiktar - kullanilanMiktar) > stoktablo[i].miktarKalan)
                     {
-                        eklenecek = (rasyontarif.TarifMiktar - kullanilanMiktar);
-                        kullanilanMiktar += eklenecek;
+                        kullanilanMiktar = stoktablo[i].miktarKalan;
+
+                        //stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - kullanilanMiktar;
                     }
-                    else
+                    else 
                     {
-                        eklenecek = stoktablo[i].miktarKalan;
+                        stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - rasyontarif.TarifMiktar;
+
+                        
+                        kullanilanMiktar = kullanilanMiktar + eksikkalan;
                     }
-                    stoktablo[i].miktarKalan = stoktablo[i].miktarKalan- eklenecek;
+                    
+                    eksikkalan = rasyontarif.TarifMiktar - kullanilanMiktar;
                     stoktanDusecekler.Add(stoktablo[i]);
                     db.SaveChanges();
-                    
-                    kullanilanMiktar += stoktablo[i].miktarKalan;
+                    //kullanilanMiktar += stoktablo[i].miktarKalan;
                     i++;
                 }
             }
@@ -91,7 +95,7 @@ namespace StokHaneV4.Controllers
 
         public ActionResult StokView()
         {
-            StokDus(3);
+            StokDus(1);
             return View();
         }
     }

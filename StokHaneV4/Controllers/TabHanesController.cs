@@ -14,7 +14,7 @@ namespace StokHaneV4.Controllers
     
     public class TabHanesController : Controller
     {
-        private DB0345WBEnt db = new DB0345WBEnt();
+        private DB0345WBEntt db = new DB0345WBEntt();
 
         // GET: TabHanes
         public ActionResult Index(string id)

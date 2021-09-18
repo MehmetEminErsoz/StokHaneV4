@@ -12,7 +12,7 @@ namespace StokHaneV4.Controllers
 {
     public class TabRasyonsController : Controller
     {
-        private DB0345WBEnt db = new DB0345WBEnt();
+        private DB0345WBEntt db = new DB0345WBEntt();
 
         // GET: TabRasyons
         public ActionResult Index()

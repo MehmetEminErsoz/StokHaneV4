@@ -143,66 +143,60 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AdoNetEntity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdoNetEntity.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AdoNetEntity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AdoNetEntity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Class1.cs" />
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+    <Compile Include="Models\MainPcModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainPcModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+    <Compile Include="Models\MainPcModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MainPcModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainPcModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabAlsatkul.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabHane.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabirsaliye.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabisletme.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabKullanici.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabLogRasyon.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabmiktarCins.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabRasyon.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tabrasyontarifi.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Taburun.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabUrunGenel.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TabYetki.cs">
-      <DependentUpon>AdoNetEntity.tt</DependentUpon>
+      <DependentUpon>MainPcModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -229,25 +223,26 @@
     <Content Include="js\demo\datatables-demo.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
-    <Content Include="Models\AdoNetEntity.Context.tt">
+    <Content Include="Models\AdoNetEntity.edmx.sql" />
+    <Content Include="Models\MainPcModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
-      <LastGenOutput>AdoNetEntity.Context.cs</LastGenOutput>
+      <DependentUpon>MainPcModel.edmx</DependentUpon>
+      <LastGenOutput>MainPcModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\AdoNetEntity.tt">
+    <Content Include="Models\MainPcModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
-      <LastGenOutput>AdoNetEntity.cs</LastGenOutput>
+      <DependentUpon>MainPcModel.edmx</DependentUpon>
+      <LastGenOutput>MainPcModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.edmx.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\AdoNetEntity.edmx">
+    <EntityDeploy Include="Models\MainPcModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AdoNetEntity.Designer.cs</LastGenOutput>
+      <LastGenOutput>MainPcModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\AdoNetEntity.edmx.diagram">
-      <DependentUpon>AdoNetEntity.edmx</DependentUpon>
+    <Content Include="Models\MainPcModel.edmx.diagram">
+      <DependentUpon>MainPcModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

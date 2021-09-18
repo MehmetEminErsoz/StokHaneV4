@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="31ef71425beb4e5282176a1741e7e4f9" Name="Diagram1">
+        <EntityTypeShape EntityType="DB0345WBModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabAlsatkul" Width="1.5" PointX="3.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabHane" Width="1.5" PointX="8" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Tabirsaliye" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Tabisletme" Width="1.5" PointX="5.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabKullanici" Width="1.5" PointX="1.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabLogRasyon" Width="1.5" PointX="10.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabmiktarCins" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabRasyon" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Tabrasyontarifi" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.Taburun" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabUrunGenel" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB0345WBModel.TabYetki" Width="1.5" PointX="1.5" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabAlsatkul" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabHane_Tabisletme" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabLogRasyon_TabHane" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_Tabirsaliye" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabKullanici_TabYetki" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabLogRasyon_TabKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabRasyon_TabKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabKullanici1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabLogRasyon_TabRasyon" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_TabmiktarCins" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_Tabrasyontarifi_TabRasyon" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_Tabrasyontarifi_Taburun" ManuallyRouted="false" />
+        <AssociationConnector Association="DB0345WBModel.FK_TabUrunGenel_Taburun" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
