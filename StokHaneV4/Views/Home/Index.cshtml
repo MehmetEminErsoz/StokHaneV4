@@ -2,21 +2,112 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+
 
 }
-
-
 <div class="card shadow mb-4 ">
-    <div class="card-header py-3" > <h6 class="m-0 font-weight-bold text-primary">Anasayfa</h6></div>
+    <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">Anasayfa</h6></div>
     <div class="card-body">
         <div class="embed-responsive-item">
 
-            @*<img src="https://www.tarimdanhaber.com/images/resize/100/656x400/haberler/2019/05/hangi_tavuk_daha_saglikli_h12147_401bd.jpg" class="table-responsive" />*@
-
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Summary</th>
+                        <th>CRUD</th>
+                        <th>Accepts Request Body</th>
+                        <th>Idempotnent</th>
+                        <th>Safe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>To fetch a single resource or group of resources</td>
+                        <td>Read</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>PUT</td>
+                        <td>To update an entire resource in one go</td>
+                        <td>Update</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>To create a new resource</td>
+                        <td>Create</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>PATCH</td>
+                        <td>To partially update a resource</td>
+                        <td>Update</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>To delete a resource</td>
+                        <td>Delete</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>OPTIONS</td>
+                        <td>To get information on permitted operations</td>
+                        <td>Read</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>HEAD</td>
+                        <td>To get metadata of the endpoint</td>
+                        <td>Read</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>TRACE</td>
+                        <td>For diagnosing purposes</td>
+                        <td>Read</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>CONNECT</td>
+                        <td>To make the two-way connection between the client and the resource.</td>
+                        <td>-</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
+<div class="card shadow mb-4 ">
+    <div class="card-body">
+
+        <img src="~/img/xd.jpeg" />
+    </div>
+</div>
+
+
+
 
 
 

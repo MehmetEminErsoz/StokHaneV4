@@ -52,13 +52,16 @@ namespace StokHaneV4.Controllers
 
 
         private void StokDus(int? Rasyonid)
-        {var urunList = db.Tabrasyontarifi.Where(s => s.idRasyon == Rasyonid).Select(x => x.idUrun).ToList();
+        { var urunList = db.Tabrasyontarifi.Where(s => s.idRasyon == Rasyonid).Select(x => x.idUrun).ToList();
             foreach (var urunId in urunList)
             {
                 var rasyontarif = db.Tabrasyontarifi.FirstOrDefault(y => y.idUrun == urunId);
                 if (rasyontarif == null)
                     return;
-                var stoktablo = db.TabUrunGenel.Where(y => y.idUrun == urunId).Include(s => s.TabAlsatkul).Include(s => s.Tabirsaliye).Include(s => s.TabmiktarCins).Include(s => s.Taburun).Include(s => s.TabKullanici).OrderBy(y => y.Tabirsaliye.girdiTarih).ToList();
+                var stoktablo = db.TabUrunGenel.Where(y => y.idUrun == urunId)
+                    .Include(s => s.TabAlsatkul).Include(s => s.Tabirsaliye).Include(s => s.TabmiktarCins).Include(s => s.Taburun)
+
+                    .Include(s => s.TabKullanici).OrderBy(y => y.Tabirsaliye.girdiTarih).ToList();
 
                 var toplamMiktar = stoktablo.Sum(x => x.miktarKalan);
                 if (rasyontarif.TarifMiktar > toplamMiktar)
@@ -68,14 +71,22 @@ namespace StokHaneV4.Controllers
                 double? genelkullanılanmiktar = 0;
                 var i = 0;
                 double? eksikkalan = 0;
+                int xyz = stoktablo.Count();
+                
                 var stoktanDusecekler = new List<TabUrunGenel>();
-                while (kullanilanMiktar< rasyontarif.TarifMiktar)
+                while (genelkullanılanmiktar < rasyontarif.TarifMiktar )
                 {
-                    if ((rasyontarif.TarifMiktar - kullanilanMiktar) > stoktablo[i].miktarKalan)
+                    if (i==xyz)
+                    {
+                        break;
+                    }
+                    if ((rasyontarif.TarifMiktar - genelkullanılanmiktar) > stoktablo[i].miktarKalan)
                     {
                         kullanilanMiktar = stoktablo[i].miktarKalan;
                         
                         stoktablo[i].miktarKalan = stoktablo[i].miktarKalan -kullanilanMiktar;
+                        genelkullanılanmiktar += kullanilanMiktar;
+                        eksikkalan = rasyontarif.TarifMiktar - genelkullanılanmiktar;
                     }
                     else 
                     {
@@ -83,27 +94,24 @@ namespace StokHaneV4.Controllers
                         if (kullanilanMiktar>0)
                         {
                             stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - eksikkalan;
-
-
-                            kullanilanMiktar += eksikkalan;
-                            
+                            genelkullanılanmiktar += kullanilanMiktar;
                         }
                         else
                         {
                             kullanilanMiktar = rasyontarif.TarifMiktar;
                             stoktablo[i].miktarKalan = stoktablo[i].miktarKalan - kullanilanMiktar;
-                            
+                            eksikkalan = rasyontarif.TarifMiktar - genelkullanılanmiktar;
+                            genelkullanılanmiktar += kullanilanMiktar;
                         }
-                        
-
                     }
                     //kullanilanMiktar = kullanilanMiktar + eksikkalan;
-                    eksikkalan = rasyontarif.TarifMiktar - kullanilanMiktar;
+                    
                    
                     stoktanDusecekler.Add(stoktablo[i]);
                     db.SaveChanges();
                     //kullanilanMiktar += stoktablo[i].miktarKalan;
                     i++;
+
                 }
             }
         }
